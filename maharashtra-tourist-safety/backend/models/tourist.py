@@ -64,10 +64,14 @@ class GeoFenceZone(BaseModel):
 class AnomalyAlert(BaseModel):
     alertId: str = Field(..., description="UUID v4 string")
     touristId: str
-    type: Literal["STATIONARY", "ABNORMAL_SPEED", "GPS_LOSS", "ROUTE_DEVIATION"]
+    type: Literal["STATIONARY", "ABNORMAL_SPEED", "GPS_LOSS", "ROUTE_DEVIATION", "DIRECTION_CHANGE"]
     riskLevel: Literal["LOW", "MEDIUM", "HIGH"]
     latitude: float
     longitude: float
     timestamp: int = Field(..., description="Unix timestamp in milliseconds")
     acknowledged: bool
     escalatedAt: Optional[int] = None
+    ruleName: Optional[str] = None
+    measuredValue: Optional[float] = None
+    threshold: Optional[float] = None
+    evidence: Optional[dict] = None

@@ -1,14 +1,22 @@
-import firebase_admin
-from firebase_admin import credentials, db as firebase_db
+try:
+    import firebase_admin
+    from firebase_admin import credentials, db as firebase_db
+except ImportError:
+    firebase_admin = None
+    credentials = None
+    firebase_db = None
 
 from config import settings
 
-_firebase_app: firebase_admin.App | None = None
+_firebase_app = None
 
 
 def init_firebase() -> None:
     """Initialise Firebase Admin SDK. Call once on app startup. Skips gracefully if credentials file is missing."""
     global _firebase_app
+    if firebase_admin is None:
+        print("[Firebase] WARNING: firebase_admin package not installed — Firebase disabled.")
+        return
     if _firebase_app is not None:
         return  # already initialised
 
@@ -40,8 +48,8 @@ def _get_project_id() -> str:
     return "maharashtra-tourist-safety"
 
 
-def get_firebase_db() -> firebase_db.Reference | None:
+def get_firebase_db():
     """Return the Firebase Realtime Database root reference, or None if not initialised."""
-    if _firebase_app is None:
+    if firebase_admin is None or _firebase_app is None:
         return None
     return firebase_db.reference("/")

@@ -25,6 +25,15 @@ class Settings(BaseSettings):
     # API
     API_V1_PREFIX: str = Field(default="/api/v1", env="API_V1_PREFIX")
 
+    # Movement Anomaly Detection
+    ANOMALY_STATIONARY_DIST_M: float = Field(default=10.0, env="ANOMALY_STATIONARY_DIST_M")
+    ANOMALY_STATIONARY_WINDOW_MS: int = Field(default=600_000, env="ANOMALY_STATIONARY_WINDOW_MS")
+    ANOMALY_SPEED_MS: float = Field(default=30.0, env="ANOMALY_SPEED_MS")
+    ANOMALY_GPS_LOSS_TIMEOUT_MS: int = Field(default=300_000, env="ANOMALY_GPS_LOSS_TIMEOUT_MS")
+    ANOMALY_ROUTE_DEVIATION_M: float = Field(default=500.0, env="ANOMALY_ROUTE_DEVIATION_M")
+    ANOMALY_DIRECTION_CHANGE_DEG: float = Field(default=120.0, env="ANOMALY_DIRECTION_CHANGE_DEG")
+    ANOMALY_MIN_POINTS: int = Field(default=3, env="ANOMALY_MIN_POINTS")
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"

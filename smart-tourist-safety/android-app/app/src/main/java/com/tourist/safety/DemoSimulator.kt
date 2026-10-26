@@ -4,8 +4,10 @@ import kotlinx.coroutines.*
 import kotlin.random.Random
 
 /**
- * DemoSimulator - simulates 5 tourists for dashboard testing.
+ * DemoSimulator - simulates multiple tourists for dashboard testing and pipeline event verification.
  * Generates realistic movement and occasionally triggers SOS/geofence alerts.
+ * Note: Simulating concurrent tourist events verifies multi-tourist event partitioning
+ * and alert latency instrumentation, but does not represent or claim horizontal system scalability.
  */
 class DemoSimulator {
     private var job: Job? = null
@@ -20,25 +22,47 @@ class DemoSimulator {
 
     fun start(scope: CoroutineScope, intervalMs: Long = 3000L) {
         tourists.forEach { (id, _, _) -> FirebaseRepository.registerTourist(id, id.replace("_", " ").lowercase().replaceFirstChar { it.uppercase() }) }
+        val baseSimulatedTime = System.currentTimeMillis()
         job = scope.launch {
             var tick = 0
             while (isActive) {
+                val simulatedTimestamp = baseSimulatedTime + (tick * intervalMs)
+                val tickWallClock = System.currentTimeMillis()
+
                 tourists.forEach { (id, pos, _) ->
+                    val tStart = System.currentTimeMillis()
                     pos[0] += (Random.nextDouble() - 0.5) * 0.0005
                     pos[1] += (Random.nextDouble() - 0.5) * 0.0005
                     val zone = GeofenceManager.checkZones(pos[0], pos[1])
                     val status = if (zone != null) "DANGER" else "SAFE"
-                    FirebaseRepository.updateLiveLocation(id, pos[0], pos[1], status)
-                    FirebaseRepository.pushLocationHistory(id, pos[0], pos[1])
+                    FirebaseRepository.updateLiveLocation(
+                        touristId = id,
+                        lat = pos[0],
+                        lng = pos[1],
+                        status = status,
+                        simulatedTime = simulatedTimestamp,
+                        actualEmittedAtMs = tickWallClock
+                    )
+                    FirebaseRepository.pushLocationHistory(id, pos[0], pos[1], simulatedTimestamp)
                     if (status == "DANGER") {
+                        val latencyMs = (System.currentTimeMillis() - tStart).toDouble()
                         FirebaseRepository.updateTouristStatus(id, "DANGER")
-                        FirebaseRepository.createAlert(id, "ZONE_ENTRY", "HIGH", pos[0], pos[1])
+                        FirebaseRepository.createAlert(
+                            touristId = id,
+                            type = "ZONE_ENTRY",
+                            risk = "HIGH",
+                            lat = pos[0],
+                            lng = pos[1],
+                            simulatedTimestamp = simulatedTimestamp,
+                            actualEmittedAtMs = System.currentTimeMillis(),
+                            processingLatencyMs = latencyMs
+                        )
                     }
                 }
                 // Simulate SOS every 30 ticks
                 if (tick > 0 && tick % 30 == 0) {
                     val (sosId, pos, _) = tourists.random()
-                    FirebaseRepository.sendSos(sosId, pos[0], pos[1])
+                    FirebaseRepository.sendSos(sosId, pos[0], pos[1], simulatedTimestamp)
                     delay(10_000); FirebaseRepository.clearSos(sosId)
                 }
                 tick++; delay(intervalMs)

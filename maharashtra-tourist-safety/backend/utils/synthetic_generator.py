@@ -639,6 +639,10 @@ class SyntheticTrajectoryGenerator:
                 "speedMps": round(speed, 2),
                 "isOfflineBuffered": False,
             }
+            if is_sos_point:
+                obs["isSos"] = True
+                obs["type"] = "SOS"
+                obs["sosId"] = f"sos_{tourist_id}_{cur_time}"
             observations.append(obs)
 
             ground_truth_type = "SOS_TRIGGERED" if is_sos_point else ("SOS_ACTIVE" if is_post_sos else "NORMAL")

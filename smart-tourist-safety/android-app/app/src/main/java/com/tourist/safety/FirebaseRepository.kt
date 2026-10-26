@@ -21,20 +21,44 @@ object FirebaseRepository {
         if (!name.isNullOrEmpty()) ref.child("name").setValue(name)
     }
 
-    fun updateLiveLocation(touristId: String, lat: Double, lng: Double, status: String) {
-        val loc = LiveLocation(lat, lng, System.currentTimeMillis(), status)
+    fun updateLiveLocation(
+        touristId: String,
+        lat: Double,
+        lng: Double,
+        status: String,
+        simulatedTime: Long = 0L,
+        actualEmittedAtMs: Long = System.currentTimeMillis()
+    ) {
+        val loc = LiveLocation(
+            latitude = lat,
+            longitude = lng,
+            time = if (simulatedTime > 0L) simulatedTime else actualEmittedAtMs,
+            status = status,
+            simulatedTime = simulatedTime,
+            actualEmittedAtMs = actualEmittedAtMs
+        )
         db.getReference("LiveLocation/$touristId").setValue(loc)
     }
 
-    fun pushLocationHistory(touristId: String, lat: Double, lng: Double) {
-        val entry = LocationEntry(lat, lng, System.currentTimeMillis())
+    fun pushLocationHistory(touristId: String, lat: Double, lng: Double, timeMs: Long = System.currentTimeMillis()) {
+        val entry = LocationEntry(lat, lng, timeMs)
         db.getReference("LocationHistory/$touristId").push().setValue(entry)
     }
 
-    fun sendSos(touristId: String, lat: Double, lng: Double) {
-        val sos = SosAlert(lat, lng, System.currentTimeMillis(), "ACTIVE")
+    fun sendSos(touristId: String, lat: Double, lng: Double, simulatedTime: Long = 0L) {
+        val wallClock = System.currentTimeMillis()
+        val sos = SosAlert(lat, lng, if (simulatedTime > 0L) simulatedTime else wallClock, "ACTIVE")
         db.getReference("SOS/$touristId").setValue(sos)
-        createAlert(touristId, "SOS", "HIGH", lat, lng)
+        createAlert(
+            touristId = touristId,
+            type = "SOS",
+            risk = "HIGH",
+            lat = lat,
+            lng = lng,
+            simulatedTimestamp = simulatedTime,
+            actualEmittedAtMs = wallClock,
+            processingLatencyMs = 0.0
+        )
         updateTouristStatus(touristId, "SOS")
     }
 
@@ -43,8 +67,27 @@ object FirebaseRepository {
         updateTouristStatus(touristId, "SAFE")
     }
 
-    fun createAlert(touristId: String, type: String, risk: String, lat: Double, lng: Double) {
-        val alert = Alert(touristId, type, risk, lat, lng, System.currentTimeMillis())
+    fun createAlert(
+        touristId: String,
+        type: String,
+        risk: String,
+        lat: Double,
+        lng: Double,
+        simulatedTimestamp: Long = 0L,
+        actualEmittedAtMs: Long = System.currentTimeMillis(),
+        processingLatencyMs: Double = 0.0
+    ) {
+        val alert = Alert(
+            touristId = touristId,
+            type = type,
+            risk = risk,
+            latitude = lat,
+            longitude = lng,
+            time = if (simulatedTimestamp > 0L) simulatedTimestamp else actualEmittedAtMs,
+            simulatedTimestamp = simulatedTimestamp,
+            actualEmittedAtMs = actualEmittedAtMs,
+            processingLatencyMs = processingLatencyMs
+        )
         db.getReference("Alerts").push().setValue(alert)
     }
 

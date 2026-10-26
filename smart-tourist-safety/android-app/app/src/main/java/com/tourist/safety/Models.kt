@@ -9,7 +9,9 @@ data class LiveLocation(
     val status: String = "SAFE",
     val safetyScore: Int = 100,
     val safetyLabel: String = "SAFE",
-    val zoneRiskLevel: String = "LOW"
+    val zoneRiskLevel: String = "LOW",
+    val simulatedTime: Long = 0L,
+    val actualEmittedAtMs: Long = 0L
 )
 data class LocationEntry(val latitude: Double = 0.0, val longitude: Double = 0.0, val time: Long = 0L)
 data class SosAlert(val latitude: Double = 0.0, val longitude: Double = 0.0, val time: Long = 0L, val status: String = "ACTIVE")
@@ -20,7 +22,10 @@ data class Alert(
     val latitude: Double = 0.0,
     val longitude: Double = 0.0,
     val time: Long = 0L,
-    val zoneName: String = ""
+    val zoneName: String = "",
+    val simulatedTimestamp: Long = 0L,
+    val actualEmittedAtMs: Long = 0L,
+    val processingLatencyMs: Double = 0.0
 )
 
 // ── Maharashtra-specific domain models ────────────────────────────────────
@@ -56,7 +61,8 @@ data class LocationPayload(
     val longitude: Double,
     val timestamp: Long,
     val accuracy: Float = 0f,
-    val isOfflineBuffered: Boolean = false
+    val isOfflineBuffered: Boolean = false,
+    val emittedAtMs: Long = 0L
 )
 
 data class SosRequest(

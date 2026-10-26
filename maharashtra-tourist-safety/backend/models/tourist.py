@@ -75,3 +75,7 @@ class AnomalyAlert(BaseModel):
     measuredValue: Optional[float] = None
     threshold: Optional[float] = None
     evidence: Optional[dict] = None
+    instrumentation: Optional[dict] = Field(
+        default=None,
+        description="Timing instrumentation distinguishing simulated timestamps from actual processing measurements"
+    )

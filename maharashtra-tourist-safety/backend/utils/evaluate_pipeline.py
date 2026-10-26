@@ -78,6 +78,65 @@ def format_metric(val: Optional[float], as_percent: bool = False) -> str:
     return f"{val:.4f}"
 
 
+def is_alert_compatible_with_event(alert: dict, event_type: str) -> bool:
+    """
+    Verify that an alert's rule or type is semantically compatible with the ground-truth anomaly type.
+    An unrelated alert (e.g. speed alert during inactivity, or zone violation during speed) must not count as detection.
+    Unsupervised ML baseline (ISOLATION_FOREST) predicts generic anomaly scores on kinematic features,
+    so it matches kinematic movement anomalies (speed, inactivity, boundary noise, zone entry).
+    """
+    rule_name = str(alert.get("ruleName", "")).upper()
+    alert_type = str(alert.get("type", "")).upper()
+
+    if rule_name == "ISOLATION_FOREST" or alert_type == "ML_ANOMALY":
+        return event_type in (
+            "ABNORMAL_SPEED",
+            "PROLONGED_INACTIVITY",
+            "RESTRICTED_ZONE_ENTRY",
+            "GPS_BOUNDARY_NOISE",
+            "SOS_EVENT",
+        )
+
+    if event_type == "PROLONGED_INACTIVITY":
+        return (
+            rule_name in ("PROLONGED_INACTIVITY", "STATIONARY")
+            or alert_type in ("STATIONARY", "PROLONGED_INACTIVITY")
+        )
+
+    if event_type == "ABNORMAL_SPEED":
+        return (
+            rule_name in ("ABNORMAL_SPEED", "SPEED")
+            or alert_type in ("ABNORMAL_SPEED", "SPEED")
+        )
+
+    if event_type == "RESTRICTED_ZONE_ENTRY":
+        return (
+            "RESTRICTED" in rule_name
+            or rule_name in ("RESTRICTED_ZONE_VIOLATION", "ZONE_ENTRY", "ZONE_VIOLATION")
+            or alert_type in ("ZONE_ENTRY", "ZONE_VIOLATION")
+        )
+
+    if event_type == "GPS_BOUNDARY_NOISE":
+        return (
+            rule_name in ("HAZARD_ZONE_VIOLATION", "RESTRICTED_ZONE_VIOLATION", "ZONE_ENTRY", "ZONE_VIOLATION")
+            or alert_type in ("ZONE_ENTRY", "ZONE_VIOLATION")
+        )
+
+    if event_type == "SOS_EVENT":
+        return (
+            rule_name in ("EMERGENCY_SOS", "SOS")
+            or alert_type == "SOS"
+        )
+
+    if event_type == "MISSING_GPS_OBSERVATION":
+        return (
+            rule_name in ("GPS_LOSS", "MISSING_GPS")
+            or alert_type in ("GPS_LOSS", "GPS_DROPOUT")
+        )
+
+    return False
+
+
 class PipelineEvaluator:
     """
     Evaluates trajectory anomaly detection configurations against ground-truth labels.
@@ -287,57 +346,133 @@ class PipelineEvaluator:
         alerts_per_hr = round(total_alerts / self.total_trajectory_hours, 2)
 
         # ── 2. Event-Level Evaluation & Detection Delay ───────────────────────
-        # Definition: Each ground-truth scenario event is treated as 1 event unit.
-        # Multiple alerts during the event window do NOT count as separate detections.
-        tp_events = 0
-        fn_events = 0
-        detection_delays_sec: List[float] = []
+        # Definition & Matching Rule:
+        # Each ground-truth scenario event E in self.events represents 1 distinct incident unit.
+        # Event Window: [E.start_ts, E.end_ts]
+        # An event is DETECTED (TP_event) if >= 1 alert is generated for that touristId
+        # within [E.start_ts, E.end_ts].
+        # Repeated alerts during the event window do NOT count as multiple detections (consolidated to 1 TP).
+        # An event is MISSED (FN_event) if no alert is generated within its active window.
+        #
+        # False Positive Events (FP_event):
+        # Alerts generated outside all ground-truth event windows for that tourist represent
+        # ungrounded false alarms. Consecutive/repeated ungrounded alerts within a clustering
+        # window (300s / 5 min cooldown window) are consolidated into 1 FP event episode.
 
+        event_windows: List[Dict[str, Any]] = []
         for evt in self.events:
             tid = evt["touristId"]
             evt_type = evt.get("anomalyType", "UNKNOWN")
+            evt_id = evt.get("eventId", f"event_{tid}")
 
-            # Determine event onset timestamp and active window
             start_ts = None
-            end_ts = float("inf")
+            end_ts = None
 
             if evt_type == "PROLONGED_INACTIVITY":
                 start_ts = evt.get("thresholdExceededTime") or evt.get("stationaryStartTime")
+                start_stat = evt.get("stationaryStartTime", start_ts)
+                duration = evt.get("totalDurationMs", 750000)
+                end_ts = start_stat + duration
             elif evt_type == "ABNORMAL_SPEED":
                 pts_meta = evt.get("anomalyPoints", [])
                 if pts_meta:
                     start_ts = pts_meta[0]["timestamp"]
-                    end_ts = pts_meta[-1]["timestamp"]
+                    end_ts = pts_meta[-1]["timestamp"] + 15000  # 1-step tolerance for persistence window
             elif evt_type == "RESTRICTED_ZONE_ENTRY":
                 start_ts = evt.get("crossingTimestamp")
+                tourist_timestamps = [p["timestamp"] for p in self.trajectories if p["touristId"] == tid]
+                end_ts = max(tourist_timestamps) if tourist_timestamps else start_ts
             elif evt_type == "SOS_EVENT":
                 start_ts = evt.get("triggerTimestamp")
+                tourist_timestamps = [p["timestamp"] for p in self.trajectories if p["touristId"] == tid]
+                end_ts = max(tourist_timestamps) if tourist_timestamps else start_ts
+            elif evt_type == "MISSING_GPS_OBSERVATION":
+                start_ts = evt.get("gapStartTimestamp", 0) + (evt.get("timeoutThresholdSeconds", 300) * 1000)
+                end_ts = evt.get("gapEndTimestamp", start_ts)
             elif evt_type == "GPS_BOUNDARY_NOISE":
-                # Boundary noise event spans the duration
-                start_ts = self.trajectories[0]["timestamp"]
+                tourist_timestamps = [p["timestamp"] for p in self.trajectories if p["touristId"] == tid]
+                start_ts = min(tourist_timestamps) if tourist_timestamps else 0
+                end_ts = max(tourist_timestamps) if tourist_timestamps else 0
 
-            if start_ts is None:
-                continue
+            if start_ts is not None and end_ts is not None:
+                event_windows.append({
+                    "eventId": evt_id,
+                    "touristId": tid,
+                    "anomalyType": evt_type,
+                    "startTs": start_ts,
+                    "endTs": end_ts,
+                    "detected": False,
+                    "firstAlertTs": None,
+                    "alertCount": 0,
+                })
 
-            # Check if any alert fired for this tourist at or after event onset
-            first_alert_ts = None
-            for (p_tid, p_ts), is_alert in pred_map.items():
-                if p_tid == tid and is_alert and p_ts >= start_ts and p_ts <= end_ts:
-                    if first_alert_ts is None or p_ts < first_alert_ts:
-                        first_alert_ts = p_ts
+        # Collect all alerts generated by this configuration
+        generated_alerts = []
+        for p in predictions:
+            if p.get("alert") is not None:
+                generated_alerts.append((p["touristId"], p["timestamp"], p["alert"]))
 
-            if first_alert_ts is not None:
-                tp_events += 1
-                delay_s = max(0.0, (first_alert_ts - start_ts) / 1000.0)
-                detection_delays_sec.append(delay_s)
-            else:
-                fn_events += 1
+        # Sort alerts chronologically
+        generated_alerts.sort(key=lambda a: a[1])
 
-        avg_detection_delay_s = None
-        if detection_delays_sec:
-            avg_detection_delay_s = round(sum(detection_delays_sec) / len(detection_delays_sec), 2)
+        # Match alerts to event windows
+        ungrounded_alerts: List[Tuple[str, int, dict]] = []
 
+        for tid, ts, alert in generated_alerts:
+            matched_event = False
+            for ew in event_windows:
+                if (
+                    ew["touristId"] == tid
+                    and (ew["startTs"] <= ts <= ew["endTs"])
+                    and is_alert_compatible_with_event(alert, ew["anomalyType"])
+                ):
+                    matched_event = True
+                    ew["alertCount"] += 1
+                    if not ew["detected"]:
+                        ew["detected"] = True
+                        ew["firstAlertTs"] = ts
+                    # Consolidated: repeated alerts during this event window do not count as separate detections
+                    break
+            if not matched_event:
+                ungrounded_alerts.append((tid, ts, alert))
+
+        # True Positives & Missed Events
+        tp_events = sum(1 for ew in event_windows if ew["detected"])
+        fn_events = sum(1 for ew in event_windows if not ew["detected"])
+
+        # Detection delays
+        detection_delays_sec = [
+            max(0.0, (ew["firstAlertTs"] - ew["startTs"]) / 1000.0)
+            for ew in event_windows
+            if ew["detected"] and ew["firstAlertTs"] is not None
+        ]
+        avg_detection_delay_s = (
+            round(sum(detection_delays_sec) / len(detection_delays_sec), 2)
+            if detection_delays_sec else None
+        )
+
+        # Cluster ungrounded alerts into False Positive Event episodes
+        # Ungrounded alerts for the same tourist within 300s (cooldown window) count as 1 FP event
+        fp_event_episodes = 0
+        tourist_ungrounded: Dict[str, List[int]] = defaultdict(list)
+        for tid, ts, _ in ungrounded_alerts:
+            tourist_ungrounded[tid].append(ts)
+
+        for tid, timestamps in tourist_ungrounded.items():
+            sorted_ts = sorted(timestamps)
+            last_cluster_ts = None
+            for ts in sorted_ts:
+                if last_cluster_ts is None or (ts - last_cluster_ts) > 300_000:
+                    fp_event_episodes += 1
+                    last_cluster_ts = ts
+                else:
+                    last_cluster_ts = ts
+
+        event_precision = safe_div(tp_events, tp_events + fp_event_episodes)
         event_recall = safe_div(tp_events, tp_events + fn_events)
+        event_f1 = None
+        if event_precision is not None and event_recall is not None and (event_precision + event_recall) > 0:
+            event_f1 = round(2.0 * event_precision * event_recall / (event_precision + event_recall), 4)
 
         return {
             "configName": config_name,
@@ -358,11 +493,30 @@ class PipelineEvaluator:
                 "alertsPerHour": alerts_per_hr,
             },
             "eventMetrics": {
-                "totalEvents": len(self.events),
+                "totalEvents": len(event_windows),
                 "detectedEvents": tp_events,
                 "missedEvents": fn_events,
+                "falsePositiveEvents": fp_event_episodes,
+                "eventPrecision": event_precision,
                 "eventRecall": event_recall,
+                "eventF1Score": event_f1,
                 "avgDetectionDelaySec": avg_detection_delay_s,
+                "matchingRule": "An event is detected (TP) if >= 1 compatible alert (matching tourist ID and anomaly type) is generated within [eventOnset, eventEnd]. Repeated alerts within an event window are consolidated. Alerts outside all compatible event windows are clustered into false positive episodes (300s window).",
+                "perEventBreakdown": [
+                    {
+                        "eventId": ew["eventId"],
+                        "touristId": ew["touristId"],
+                        "anomalyType": ew["anomalyType"],
+                        "detected": ew["detected"],
+                        "firstAlertTimestamp": ew["firstAlertTs"],
+                        "totalAlertsFired": ew["alertCount"],
+                        "detectionDelaySec": (
+                            round((ew["firstAlertTs"] - ew["startTs"]) / 1000.0, 2)
+                            if ew["detected"] and ew["firstAlertTs"] is not None else None
+                        ),
+                    }
+                    for ew in event_windows
+                ],
             },
         }
 
@@ -377,6 +531,7 @@ class PipelineEvaluator:
             "evaluatedAtUtc": datetime.now(timezone.utc).isoformat(),
             "totalTrajectoryPoints": len(self.trajectories),
             "totalLabelledPoints": len(self.point_gt_map),
+            "totalGroundTruthEvents": len(self.events),
             "totalTrajectoryHours": round(self.total_trajectory_hours, 3),
             "configurations": {
                 "configA": res_a,
@@ -389,7 +544,7 @@ class PipelineEvaluator:
 
 # ── Report Generation Helpers ──────────────────────────────────────────────────
 def save_csv_report(eval_results: Dict[str, Any], output_path: str | Path) -> None:
-    """Save formatted comparative metrics table into CSV."""
+    """Save formatted comparative metrics table into CSV for both Point-level and Event-level units."""
     rows = []
     headers = [
         "Configuration",
@@ -410,21 +565,22 @@ def save_csv_report(eval_results: Dict[str, Any], output_path: str | Path) -> No
     for key, cfg in eval_results["configurations"].items():
         name = cfg.get("configName", key)
         if cfg.get("status") == "UNAVAILABLE":
-            rows.append({
-                "Configuration": name,
-                "EvaluationUnit": "Point-level",
-                "Precision": "N/A (sklearn missing)",
-                "Recall": "N/A",
-                "F1Score": "N/A",
-                "FalsePositiveRate": "N/A",
-                "TotalAlerts": "N/A",
-                "AlertsPerTrajectoryHour": "N/A",
-                "AvgDetectionDelaySec": "N/A",
-                "TruePositives": "N/A",
-                "FalsePositives": "N/A",
-                "FalseNegatives": "N/A",
-                "TrueNegatives": "N/A",
-            })
+            for unit in ("Point-level", "Event-level"):
+                rows.append({
+                    "Configuration": name,
+                    "EvaluationUnit": unit,
+                    "Precision": "N/A (sklearn missing)",
+                    "Recall": "N/A",
+                    "F1Score": "N/A",
+                    "FalsePositiveRate": "N/A",
+                    "TotalAlerts": "N/A",
+                    "AlertsPerTrajectoryHour": "N/A",
+                    "AvgDetectionDelaySec": "N/A",
+                    "TruePositives": "N/A",
+                    "FalsePositives": "N/A",
+                    "FalseNegatives": "N/A",
+                    "TrueNegatives": "N/A",
+                })
             continue
 
         pm = cfg["pointMetrics"]
@@ -448,6 +604,23 @@ def save_csv_report(eval_results: Dict[str, Any], output_path: str | Path) -> No
             "TrueNegatives": pm["trueNegatives"],
         })
 
+        # Event-level row
+        rows.append({
+            "Configuration": name,
+            "EvaluationUnit": "Event-level",
+            "Precision": format_metric(em.get("eventPrecision")),
+            "Recall": format_metric(em.get("eventRecall")),
+            "F1Score": format_metric(em.get("eventF1Score")),
+            "FalsePositiveRate": "N/A (discrete events)",
+            "TotalAlerts": om["totalAlerts"],
+            "AlertsPerTrajectoryHour": om["alertsPerHour"],
+            "AvgDetectionDelaySec": format_metric(em.get("avgDetectionDelaySec")),
+            "TruePositives": em["detectedEvents"],
+            "FalsePositives": em["falsePositiveEvents"],
+            "FalseNegatives": em["missedEvents"],
+            "TrueNegatives": "N/A",
+        })
+
     out_file = Path(output_path)
     out_file.parent.mkdir(parents=True, exist_ok=True)
     with open(out_file, "w", newline="", encoding="utf-8") as f:
@@ -457,14 +630,21 @@ def save_csv_report(eval_results: Dict[str, Any], output_path: str | Path) -> No
 
 
 def print_comparison_table(eval_results: Dict[str, Any]) -> None:
-    """Print readable side-by-side terminal comparison."""
-    print("=" * 96)
+    """Print readable side-by-side terminal comparison for both point-level and event-level."""
+    total_pts = eval_results.get("totalTrajectoryPoints", 0)
+    total_hrs = eval_results.get("totalTrajectoryHours", 0)
+    total_evts = eval_results.get("totalGroundTruthEvents", 6)
+
+    print("=" * 105)
     print("COMPARATIVE EVALUATION: 4 ANOMALY DETECTION CONFIGURATIONS")
-    print(f"Dataset Points: {eval_results['totalTrajectoryPoints']} | Total Trajectory Hours: {eval_results['totalTrajectoryHours']}h")
-    print("=" * 96)
-    fmt = "{:<28} | {:<9} | {:<8} | {:<8} | {:<8} | {:<10} | {:<10}"
-    print(fmt.format("Configuration", "Precision", "Recall", "F1", "FPR", "Alerts/Hr", "Delay (s)"))
-    print("-" * 96)
+    print(f"Dataset Points: {total_pts} | Trajectory Hours: {total_hrs}h | Ground-Truth Events: {total_evts}")
+    print("=" * 105)
+
+    print("\n[POINT-LEVEL CLASSIFICATION METRICS] (Every trajectory observation evaluated individually)")
+    print("-" * 105)
+    fmt_pt = "{:<28} | {:<9} | {:<8} | {:<8} | {:<8} | {:<10} | {:<16}"
+    print(fmt_pt.format("Configuration", "Precision", "Recall", "F1", "FPR", "Alerts/Hr", "TP / FP / FN / TN"))
+    print("-" * 105)
 
     for _, cfg in eval_results["configurations"].items():
         name = cfg.get("configName", "Unknown")
@@ -474,18 +654,43 @@ def print_comparison_table(eval_results: Dict[str, Any]) -> None:
 
         pm = cfg["pointMetrics"]
         om = cfg["operationalMetrics"]
-        em = cfg["eventMetrics"]
 
         p_str = format_metric(pm["precision"])
         r_str = format_metric(pm["recall"])
         f_str = format_metric(pm["f1Score"])
         fpr_str = format_metric(pm["falsePositiveRate"])
         rate_str = str(om["alertsPerHour"])
-        delay_str = format_metric(em["avgDetectionDelaySec"])
+        cm_str = f"{pm['truePositives']} / {pm['falsePositives']} / {pm['falseNegatives']} / {pm['trueNegatives']}"
 
-        print(fmt.format(name, p_str, r_str, f_str, fpr_str, rate_str, delay_str))
+        print(fmt_pt.format(name, p_str, r_str, f_str, fpr_str, rate_str, cm_str))
 
-    print("=" * 96)
+    print("-" * 105)
+
+    print("\n[EVENT-LEVEL OPERATIONAL METRICS] (Consolidated events; repeated alerts do not increment TP)")
+    print("-" * 105)
+    fmt_ev = "{:<28} | {:<9} | {:<8} | {:<8} | {:<10} | {:<10} | {:<16}"
+    print(fmt_ev.format("Configuration", "Precision", "Recall", "F1", "Delay (s)", "Alerts/Hr", "TP / FP / FN"))
+    print("-" * 105)
+
+    for _, cfg in eval_results["configurations"].items():
+        name = cfg.get("configName", "Unknown")
+        if cfg.get("status") == "UNAVAILABLE":
+            print(f"{name:<28} | N/A (scikit-learn not installed)")
+            continue
+
+        om = cfg["operationalMetrics"]
+        em = cfg["eventMetrics"]
+
+        p_str = format_metric(em.get("eventPrecision"))
+        r_str = format_metric(em.get("eventRecall"))
+        f_str = format_metric(em.get("eventF1Score"))
+        delay_str = format_metric(em.get("avgDetectionDelaySec"))
+        rate_str = str(om["alertsPerHour"])
+        cm_str = f"{em['detectedEvents']} / {em['falsePositiveEvents']} / {em['missedEvents']}"
+
+        print(fmt_ev.format(name, p_str, r_str, f_str, delay_str, rate_str, cm_str))
+
+    print("=" * 105)
 
 
 def main():

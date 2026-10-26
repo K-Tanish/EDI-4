@@ -76,6 +76,41 @@ _candidate_tracker: Dict[Tuple[str, str], dict] = {}
 # (tourist_id, rule_name) -> last_alert_timestamp_s
 _alert_cooldowns: Dict[Tuple[str, str], float] = {}
 
+# Multi-tourist event telemetry buffer
+_pipeline_telemetry: Deque[dict] = deque(maxlen=200)
+
+
+def record_pipeline_telemetry(tourist_id: str, point: dict, alert_count: int, start_proc_ms: int):
+    now_ms = int(time.time() * 1000)
+    pt_ts = point.get("timestamp", now_ms)
+    rcv_ms = point.get("receivedAt", now_ms)
+    record = {
+        "touristId": tourist_id,
+        "simulatedTimestamp": pt_ts,
+        "receivedAtWallClockMs": rcv_ms,
+        "processedAtWallClockMs": now_ms,
+        "processingLatencyMs": max(0.0, float(now_ms - rcv_ms)),
+        "detectionDurationMs": max(0.0, float(now_ms - start_proc_ms)),
+        "alertsGenerated": alert_count,
+        "activeTouristQueueDepth": len(_history[tourist_id]),
+    }
+    _pipeline_telemetry.append(record)
+
+
+def get_pipeline_telemetry() -> dict:
+    """Retrieve runtime telemetry showing distinguishable multi-tourist tracking and latencies."""
+    return {
+        "activeTrackedTouristCount": len(_history),
+        "trackedTouristIds": list(_history.keys()),
+        "telemetryRecordsCount": len(_pipeline_telemetry),
+        "recentRecords": list(_pipeline_telemetry),
+    }
+
+
+def clear_pipeline_telemetry():
+    """Clear telemetry records (for test/inspection reset)."""
+    _pipeline_telemetry.clear()
+
 
 # ── Reference Route Management ─────────────────────────────────────────────────
 def _normalize_route(route: Any) -> List[Tuple[float, float]]:
@@ -362,6 +397,15 @@ def dispatch_sos(
                 "bypassedCooldown": True,
             },
         },
+        "instrumentation": {
+            "touristId": tourist_id,
+            "simulatedTimestamp": timestamp_ms or now_ms,
+            "emittedAtWallClockMs": now_ms,
+            "receivedAtWallClockMs": now_ms,
+            "generatedAtWallClockMs": now_ms,
+            "processingLatencyMs": 0.0,
+            "simulatedLagMs": float(now_ms - (timestamp_ms or now_ms)),
+        },
         "acknowledged": False,
         "escalatedAt": None,
         "createdAt": now_ms,
@@ -380,9 +424,16 @@ def _make_alert(
     unit: str = "",
     details: Optional[dict] = None,
 ) -> dict:
-    """Generate an alert with structured anomaly evidence."""
+    """Generate an alert with structured anomaly evidence and timing instrumentation."""
     now_ms = int(time.time() * 1000)
     pt_ts = point.get("timestamp", now_ms)
+    received_at_ms = point.get("receivedAt", now_ms)
+    emitted_at_ms = point.get("emittedAtMs", received_at_ms)
+
+    # Actual latency: wall-clock duration from arrival at pipeline to alert generation
+    processing_latency_ms = max(0.0, float(now_ms - received_at_ms))
+    # Simulated lag: difference between wall-clock reception and simulated observation time
+    simulated_lag_ms = float(received_at_ms - pt_ts)
 
     evidence = {
         "ruleName": rule_name,
@@ -391,6 +442,16 @@ def _make_alert(
         "threshold": threshold,
         "unit": unit,
         "details": details or {},
+    }
+
+    instrumentation = {
+        "touristId": tourist_id,
+        "simulatedTimestamp": pt_ts,
+        "emittedAtWallClockMs": emitted_at_ms,
+        "receivedAtWallClockMs": received_at_ms,
+        "generatedAtWallClockMs": now_ms,
+        "processingLatencyMs": processing_latency_ms,
+        "simulatedLagMs": simulated_lag_ms,
     }
 
     return {
@@ -405,6 +466,7 @@ def _make_alert(
         "measuredValue": measured_value,
         "threshold": threshold,
         "evidence": evidence,
+        "instrumentation": instrumentation,
         "acknowledged": False,
         "escalatedAt": None,
         "createdAt": now_ms,
@@ -551,6 +613,8 @@ def _analyse_all(tourist_id: str, point: dict) -> List[dict]:
     Main movement-anomaly pipeline with explicit temporal persistence,
     missing-observation freezing, duplicate suppression, and SOS emergency bypass.
     """
+    start_proc_ms = int(time.time() * 1000)
+
     # ── Path 1: Emergency SOS Bypass ──────────────────────────────────────────
     # SOS events MUST bypass ordinary persistence and cooldown filtering
     if point.get("type") == "SOS" or point.get("isSos") or point.get("sosId"):
@@ -561,6 +625,7 @@ def _analyse_all(tourist_id: str, point: dict) -> List[dict]:
             timestamp_ms=point.get("timestamp"),
             sos_id=point.get("sosId"),
         )
+        record_pipeline_telemetry(tourist_id, point, 1, start_proc_ms)
         return [sos_alert]
 
     # ── Path 2: Coordinate & Timestamp Validation ─────────────────────────────
@@ -568,6 +633,7 @@ def _analyse_all(tourist_id: str, point: dict) -> List[dict]:
     if not is_valid:
         # Crucial: Missing observations do NOT automatically count as normal movement.
         # Candidate persistence tracker state is preserved unchanged.
+        record_pipeline_telemetry(tourist_id, point, 0, start_proc_ms)
         return []
 
     # Optional dynamic route update from point payload
@@ -652,6 +718,7 @@ def _analyse_all(tourist_id: str, point: dict) -> List[dict]:
             # Verified normal movement on a valid observation resets the candidate tracker
             del _candidate_tracker[key]
 
+    record_pipeline_telemetry(tourist_id, point, len(confirmed_alerts), start_proc_ms)
     return confirmed_alerts
 
 

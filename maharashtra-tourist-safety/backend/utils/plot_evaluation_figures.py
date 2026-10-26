@@ -96,13 +96,16 @@ def plot_configuration_comparison(
     total_pts = eval_json.get("totalTrajectoryPoints", 289)
     total_hrs = eval_json.get("totalTrajectoryHours", 1.29)
 
-    configs = [r["Configuration"].replace("A: ", "").replace("B: ", "").replace("C: ", "").replace("D: ", "") for r in csv_rows]
+    # Filter to Point-level rows if mixed CSV is provided
+    point_rows = [r for r in csv_rows if r.get("EvaluationUnit") == "Point-level"] or csv_rows[:4]
+
+    configs = [r["Configuration"].replace("A: ", "").replace("B: ", "").replace("C: ", "").replace("D: ", "") for r in point_rows]
     short_names = ["A: Movement\nOnly", "B: Movement\n+ Geofence", "C: Full Pipeline\n(Refined)", "D: Isolation\nForest"]
 
-    precision_vals = [r.get("Precision") or 0.0 for r in csv_rows]
-    recall_vals = [r.get("Recall") or 0.0 for r in csv_rows]
-    f1_vals = [r.get("F1Score") or 0.0 for r in csv_rows]
-    alert_rates = [r.get("AlertsPerTrajectoryHour") or 0.0 for r in csv_rows]
+    precision_vals = [r.get("Precision") or 0.0 for r in point_rows]
+    recall_vals = [r.get("Recall") or 0.0 for r in point_rows]
+    f1_vals = [r.get("F1Score") or 0.0 for r in point_rows]
+    alert_rates = [r.get("AlertsPerTrajectoryHour") or 0.0 for r in point_rows]
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6), gridspec_kw={"width_ratios": [2.2, 1.2]})
 
@@ -185,11 +188,12 @@ def plot_false_positive_behaviour(
     Subplot 2: True Positives vs. False Positives Breakdown
     """
     total_pts = eval_json.get("totalTrajectoryPoints", 289)
+    point_rows = [r for r in csv_rows if r.get("EvaluationUnit") == "Point-level"] or csv_rows[:4]
     short_names = ["A: Movement\nOnly", "B: Movement\n+ Geofence", "C: Full Pipeline\n(Refined)", "D: Isolation\nForest"]
 
-    fpr_pcts = [(r.get("FalsePositiveRate") or 0.0) * 100.0 for r in csv_rows]
-    tp_vals = [r.get("TruePositives", 0) for r in csv_rows]
-    fp_vals = [r.get("FalsePositives", 0) for r in csv_rows]
+    fpr_pcts = [(r.get("FalsePositiveRate") or 0.0) * 100.0 for r in point_rows]
+    tp_vals = [r.get("TruePositives", 0) for r in point_rows]
+    fp_vals = [r.get("FalsePositives", 0) for r in point_rows]
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5.5))
 

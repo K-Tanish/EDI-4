@@ -1037,7 +1037,10 @@
     "timestamp": 1793005395000,
     "accuracy": 4.39,
     "speedMps": 0.2,
-    "isOfflineBuffered": false
+    "isOfflineBuffered": false,
+    "isSos": true,
+    "type": "SOS",
+    "sosId": "sos_tourist_sos_001_1793005395000"
   },
   {
     "pointIndex": 12,

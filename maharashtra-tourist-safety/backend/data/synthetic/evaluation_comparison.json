@@ -1,7 +1,8 @@
 {
-  "evaluatedAtUtc": "2026-10-26T15:43:45.333208+00:00",
+  "evaluatedAtUtc": "2026-10-26T16:44:02.249241+00:00",
   "totalTrajectoryPoints": 289,
   "totalLabelledPoints": 289,
+  "totalGroundTruthEvents": 6,
   "totalTrajectoryHours": 1.288,
   "configurations": {
     "configA": {
@@ -24,10 +25,70 @@
       },
       "eventMetrics": {
         "totalEvents": 6,
-        "detectedEvents": 3,
-        "missedEvents": 2,
-        "eventRecall": 0.6,
-        "avgDetectionDelaySec": 10.0
+        "detectedEvents": 2,
+        "missedEvents": 4,
+        "falsePositiveEvents": 2,
+        "eventPrecision": 0.5,
+        "eventRecall": 0.3333,
+        "eventF1Score": 0.4,
+        "avgDetectionDelaySec": 0.0,
+        "matchingRule": "An event is detected (TP) if >= 1 compatible alert (matching tourist ID and anomaly type) is generated within [eventOnset, eventEnd]. Repeated alerts within an event window are consolidated. Alerts outside all compatible event windows are clustered into false positive episodes (300s window).",
+        "perEventBreakdown": [
+          {
+            "eventId": "event_tourist_inactivity_001_inactivity",
+            "touristId": "tourist_inactivity_001",
+            "anomalyType": "PROLONGED_INACTIVITY",
+            "detected": true,
+            "firstAlertTimestamp": 1793006025000,
+            "totalAlertsFired": 11,
+            "detectionDelaySec": 0.0
+          },
+          {
+            "eventId": "event_tourist_speed_001_speed",
+            "touristId": "tourist_speed_001",
+            "anomalyType": "ABNORMAL_SPEED",
+            "detected": true,
+            "firstAlertTimestamp": 1793005425000,
+            "totalAlertsFired": 2,
+            "detectionDelaySec": 0.0
+          },
+          {
+            "eventId": "event_tourist_restricted_001_zone_entry",
+            "touristId": "tourist_restricted_001",
+            "anomalyType": "RESTRICTED_ZONE_ENTRY",
+            "detected": false,
+            "firstAlertTimestamp": null,
+            "totalAlertsFired": 0,
+            "detectionDelaySec": null
+          },
+          {
+            "eventId": "event_tourist_boundary_noise_001_boundary_noise",
+            "touristId": "tourist_boundary_noise_001",
+            "anomalyType": "GPS_BOUNDARY_NOISE",
+            "detected": false,
+            "firstAlertTimestamp": null,
+            "totalAlertsFired": 0,
+            "detectionDelaySec": null
+          },
+          {
+            "eventId": "event_tourist_missing_gps_001_missing_gps",
+            "touristId": "tourist_missing_gps_001",
+            "anomalyType": "MISSING_GPS_OBSERVATION",
+            "detected": false,
+            "firstAlertTimestamp": null,
+            "totalAlertsFired": 0,
+            "detectionDelaySec": null
+          },
+          {
+            "eventId": "event_tourist_sos_001_sos",
+            "touristId": "tourist_sos_001",
+            "anomalyType": "SOS_EVENT",
+            "detected": false,
+            "firstAlertTimestamp": null,
+            "totalAlertsFired": 0,
+            "detectionDelaySec": null
+          }
+        ]
       }
     },
     "configB": {
@@ -50,36 +111,156 @@
       },
       "eventMetrics": {
         "totalEvents": 6,
-        "detectedEvents": 5,
-        "missedEvents": 0,
-        "eventRecall": 1.0,
-        "avgDetectionDelaySec": 6.0
+        "detectedEvents": 3,
+        "missedEvents": 3,
+        "falsePositiveEvents": 3,
+        "eventPrecision": 0.5,
+        "eventRecall": 0.5,
+        "eventF1Score": 0.5,
+        "avgDetectionDelaySec": 0.0,
+        "matchingRule": "An event is detected (TP) if >= 1 compatible alert (matching tourist ID and anomaly type) is generated within [eventOnset, eventEnd]. Repeated alerts within an event window are consolidated. Alerts outside all compatible event windows are clustered into false positive episodes (300s window).",
+        "perEventBreakdown": [
+          {
+            "eventId": "event_tourist_inactivity_001_inactivity",
+            "touristId": "tourist_inactivity_001",
+            "anomalyType": "PROLONGED_INACTIVITY",
+            "detected": true,
+            "firstAlertTimestamp": 1793006025000,
+            "totalAlertsFired": 11,
+            "detectionDelaySec": 0.0
+          },
+          {
+            "eventId": "event_tourist_speed_001_speed",
+            "touristId": "tourist_speed_001",
+            "anomalyType": "ABNORMAL_SPEED",
+            "detected": true,
+            "firstAlertTimestamp": 1793005425000,
+            "totalAlertsFired": 2,
+            "detectionDelaySec": 0.0
+          },
+          {
+            "eventId": "event_tourist_restricted_001_zone_entry",
+            "touristId": "tourist_restricted_001",
+            "anomalyType": "RESTRICTED_ZONE_ENTRY",
+            "detected": true,
+            "firstAlertTimestamp": 1793005335000,
+            "totalAlertsFired": 26,
+            "detectionDelaySec": 0.0
+          },
+          {
+            "eventId": "event_tourist_boundary_noise_001_boundary_noise",
+            "touristId": "tourist_boundary_noise_001",
+            "anomalyType": "GPS_BOUNDARY_NOISE",
+            "detected": false,
+            "firstAlertTimestamp": null,
+            "totalAlertsFired": 0,
+            "detectionDelaySec": null
+          },
+          {
+            "eventId": "event_tourist_missing_gps_001_missing_gps",
+            "touristId": "tourist_missing_gps_001",
+            "anomalyType": "MISSING_GPS_OBSERVATION",
+            "detected": false,
+            "firstAlertTimestamp": null,
+            "totalAlertsFired": 0,
+            "detectionDelaySec": null
+          },
+          {
+            "eventId": "event_tourist_sos_001_sos",
+            "touristId": "tourist_sos_001",
+            "anomalyType": "SOS_EVENT",
+            "detected": false,
+            "firstAlertTimestamp": null,
+            "totalAlertsFired": 0,
+            "detectionDelaySec": null
+          }
+        ]
       }
     },
     "configC": {
       "configName": "C: Full Pipeline (Refined)",
       "status": "COMPLETED",
       "pointMetrics": {
-        "precision": 0.6667,
-        "recall": 0.0488,
-        "f1Score": 0.0909,
+        "precision": 0.7143,
+        "recall": 0.061,
+        "f1Score": 0.1124,
         "falsePositiveRate": 0.0097,
-        "truePositives": 4,
+        "truePositives": 5,
         "falsePositives": 2,
-        "falseNegatives": 78,
+        "falseNegatives": 77,
         "trueNegatives": 205
       },
       "operationalMetrics": {
-        "totalAlerts": 6,
+        "totalAlerts": 7,
         "totalTrajectoryHours": 1.29,
-        "alertsPerHour": 4.66
+        "alertsPerHour": 5.44
       },
       "eventMetrics": {
         "totalEvents": 6,
         "detectedEvents": 4,
-        "missedEvents": 1,
-        "eventRecall": 0.8,
-        "avgDetectionDelaySec": 18.75
+        "missedEvents": 2,
+        "falsePositiveEvents": 3,
+        "eventPrecision": 0.5714,
+        "eventRecall": 0.6667,
+        "eventF1Score": 0.6154,
+        "avgDetectionDelaySec": 7.5,
+        "matchingRule": "An event is detected (TP) if >= 1 compatible alert (matching tourist ID and anomaly type) is generated within [eventOnset, eventEnd]. Repeated alerts within an event window are consolidated. Alerts outside all compatible event windows are clustered into false positive episodes (300s window).",
+        "perEventBreakdown": [
+          {
+            "eventId": "event_tourist_inactivity_001_inactivity",
+            "touristId": "tourist_inactivity_001",
+            "anomalyType": "PROLONGED_INACTIVITY",
+            "detected": true,
+            "firstAlertTimestamp": 1793006025000,
+            "totalAlertsFired": 1,
+            "detectionDelaySec": 0.0
+          },
+          {
+            "eventId": "event_tourist_speed_001_speed",
+            "touristId": "tourist_speed_001",
+            "anomalyType": "ABNORMAL_SPEED",
+            "detected": true,
+            "firstAlertTimestamp": 1793005440000,
+            "totalAlertsFired": 1,
+            "detectionDelaySec": 15.0
+          },
+          {
+            "eventId": "event_tourist_restricted_001_zone_entry",
+            "touristId": "tourist_restricted_001",
+            "anomalyType": "RESTRICTED_ZONE_ENTRY",
+            "detected": true,
+            "firstAlertTimestamp": 1793005350000,
+            "totalAlertsFired": 1,
+            "detectionDelaySec": 15.0
+          },
+          {
+            "eventId": "event_tourist_boundary_noise_001_boundary_noise",
+            "touristId": "tourist_boundary_noise_001",
+            "anomalyType": "GPS_BOUNDARY_NOISE",
+            "detected": false,
+            "firstAlertTimestamp": null,
+            "totalAlertsFired": 0,
+            "detectionDelaySec": null
+          },
+          {
+            "eventId": "event_tourist_missing_gps_001_missing_gps",
+            "touristId": "tourist_missing_gps_001",
+            "anomalyType": "MISSING_GPS_OBSERVATION",
+            "detected": false,
+            "firstAlertTimestamp": null,
+            "totalAlertsFired": 0,
+            "detectionDelaySec": null
+          },
+          {
+            "eventId": "event_tourist_sos_001_sos",
+            "touristId": "tourist_sos_001",
+            "anomalyType": "SOS_EVENT",
+            "detected": true,
+            "firstAlertTimestamp": 1793005395000,
+            "totalAlertsFired": 1,
+            "detectionDelaySec": 0.0
+          }
+        ]
       }
     },
     "configD": {
@@ -103,9 +284,69 @@
       "eventMetrics": {
         "totalEvents": 6,
         "detectedEvents": 4,
-        "missedEvents": 1,
-        "eventRecall": 0.8,
-        "avgDetectionDelaySec": 41.25
+        "missedEvents": 2,
+        "falsePositiveEvents": 2,
+        "eventPrecision": 0.6667,
+        "eventRecall": 0.6667,
+        "eventF1Score": 0.6667,
+        "avgDetectionDelaySec": 41.25,
+        "matchingRule": "An event is detected (TP) if >= 1 compatible alert (matching tourist ID and anomaly type) is generated within [eventOnset, eventEnd]. Repeated alerts within an event window are consolidated. Alerts outside all compatible event windows are clustered into false positive episodes (300s window).",
+        "perEventBreakdown": [
+          {
+            "eventId": "event_tourist_inactivity_001_inactivity",
+            "touristId": "tourist_inactivity_001",
+            "anomalyType": "PROLONGED_INACTIVITY",
+            "detected": true,
+            "firstAlertTimestamp": 1793006040000,
+            "totalAlertsFired": 2,
+            "detectionDelaySec": 15.0
+          },
+          {
+            "eventId": "event_tourist_speed_001_speed",
+            "touristId": "tourist_speed_001",
+            "anomalyType": "ABNORMAL_SPEED",
+            "detected": true,
+            "firstAlertTimestamp": 1793005425000,
+            "totalAlertsFired": 3,
+            "detectionDelaySec": 0.0
+          },
+          {
+            "eventId": "event_tourist_restricted_001_zone_entry",
+            "touristId": "tourist_restricted_001",
+            "anomalyType": "RESTRICTED_ZONE_ENTRY",
+            "detected": true,
+            "firstAlertTimestamp": 1793005470000,
+            "totalAlertsFired": 16,
+            "detectionDelaySec": 135.0
+          },
+          {
+            "eventId": "event_tourist_boundary_noise_001_boundary_noise",
+            "touristId": "tourist_boundary_noise_001",
+            "anomalyType": "GPS_BOUNDARY_NOISE",
+            "detected": true,
+            "firstAlertTimestamp": 1793005215000,
+            "totalAlertsFired": 29,
+            "detectionDelaySec": 15.0
+          },
+          {
+            "eventId": "event_tourist_missing_gps_001_missing_gps",
+            "touristId": "tourist_missing_gps_001",
+            "anomalyType": "MISSING_GPS_OBSERVATION",
+            "detected": false,
+            "firstAlertTimestamp": null,
+            "totalAlertsFired": 0,
+            "detectionDelaySec": null
+          },
+          {
+            "eventId": "event_tourist_sos_001_sos",
+            "touristId": "tourist_sos_001",
+            "anomalyType": "SOS_EVENT",
+            "detected": false,
+            "firstAlertTimestamp": null,
+            "totalAlertsFired": 0,
+            "detectionDelaySec": null
+          }
+        ]
       }
     }
   }

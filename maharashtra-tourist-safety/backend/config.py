@@ -34,6 +34,11 @@ class Settings(BaseSettings):
     ANOMALY_DIRECTION_CHANGE_DEG: float = Field(default=120.0, env="ANOMALY_DIRECTION_CHANGE_DEG")
     ANOMALY_MIN_POINTS: int = Field(default=3, env="ANOMALY_MIN_POINTS")
 
+    # Alert Refinement & Temporal Persistence Policy
+    PERSISTENCE_MIN_CONSECUTIVE: int = Field(default=2, env="PERSISTENCE_MIN_CONSECUTIVE")
+    PERSISTENCE_WINDOW_MS: int = Field(default=15_000, env="PERSISTENCE_WINDOW_MS")
+    DUPLICATE_SUPPRESSION_SECONDS: int = Field(default=300, env="DUPLICATE_SUPPRESSION_SECONDS")
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"

@@ -8,12 +8,17 @@ Movement Detection Rules:
   2. PROLONGED_INACTIVITY: Tourist remains within small radius (< 10 m) for >= 10 minutes
   3. DIRECTION_CHANGE: Acute/erratic heading change (> 120.0 degrees) during movement
   4. ROUTE_DEVIATION: Deviation from reference route (> 500.0 m) when reference route is available
-  5. GPS_LOSS: Timeout without GPS updates (> 5 minutes)
+  5. GEOFENCE_ENGINE: RESTRICTED and HAZARD zone violations
+  6. GPS_LOSS: Timeout without GPS updates (> 5 minutes)
 
-All features validate timestamps and coordinates beforehand.
-Unavailable features (e.g. no reference route, dt <= 0, insufficient displacement)
-are represented as unknown (None), never as anomalies.
-Structured anomaly evidence is returned with every alert.
+Alert Refinement Policy:
+  - Temporal Persistence: Anomaly candidates must persist across >= PERSISTENCE_MIN_CONSECUTIVE
+    observations or span >= PERSISTENCE_WINDOW_MS to confirm. Transient anomalies are filtered.
+  - Missing Observations: Missing/invalid observations do NOT reset candidate state to normal.
+  - Duplicate Suppression: Alerts for the same rule & tourist are suppressed during
+    DUPLICATE_SUPPRESSION_SECONDS (default: 300s / 5 minutes).
+  - SOS Bypass: Emergency SOS events bypass ordinary persistence and cooldown filtering,
+    immediately executing the emergency-handling path.
 """
 from __future__ import annotations
 
@@ -25,6 +30,7 @@ from collections import defaultdict, deque
 from typing import Any, Deque, Dict, List, Optional, Tuple
 
 from config import settings
+
 try:
     from db.firebase_admin import get_firebase_db
 except Exception:
@@ -49,6 +55,11 @@ _DIRECTION_CHANGE_DEG: float = getattr(settings, "ANOMALY_DIRECTION_CHANGE_DEG",
 _MIN_POINTS: int = getattr(settings, "ANOMALY_MIN_POINTS", 3)
 _MIN_DISPLACEMENT_FOR_BEARING_M: float = 3.0
 
+# ── Alert Refinement & Temporal Persistence Thresholds ────────────────────────
+_PERSISTENCE_MIN_CONSECUTIVE: int = getattr(settings, "PERSISTENCE_MIN_CONSECUTIVE", 2)
+_PERSISTENCE_WINDOW_MS: int = getattr(settings, "PERSISTENCE_WINDOW_MS", 15_000)
+_DUPLICATE_SUPPRESSION_SECONDS: int = getattr(settings, "DUPLICATE_SUPPRESSION_SECONDS", 300)
+
 # Shared queue — location events are pushed here by the location router
 location_queue: asyncio.Queue = asyncio.Queue()
 
@@ -58,6 +69,12 @@ _last_gps: Dict[str, int] = {}  # touristId -> last timestamp_ms
 
 # Per-tourist reference routes: touristId -> list of (lat, lng)
 _reference_routes: Dict[str, List[Tuple[float, float]]] = {}
+
+# Alert Refinement State
+# (tourist_id, rule_name) -> {first_seen_ms, last_seen_ms, count, alert}
+_candidate_tracker: Dict[Tuple[str, str], dict] = {}
+# (tourist_id, rule_name) -> last_alert_timestamp_s
+_alert_cooldowns: Dict[Tuple[str, str], float] = {}
 
 
 # ── Reference Route Management ─────────────────────────────────────────────────
@@ -104,17 +121,43 @@ def clear_reference_route(tourist_id: str) -> None:
 
 
 def reset_state(tourist_id: Optional[str] = None) -> None:
-    """Reset tracking history, last known GPS, routes, and geofence cooldowns."""
+    """Reset tracking history, last known GPS, routes, candidates, and cooldowns."""
     if tourist_id:
         _history.pop(tourist_id, None)
         _last_gps.pop(tourist_id, None)
         _reference_routes.pop(tourist_id, None)
+        for k in list(_candidate_tracker.keys()):
+            if k[0] == tourist_id:
+                del _candidate_tracker[k]
+        for k in list(_alert_cooldowns.keys()):
+            if k[0] == tourist_id:
+                del _alert_cooldowns[k]
         reset_geofence_state(tourist_id)
     else:
         _history.clear()
         _last_gps.clear()
         _reference_routes.clear()
+        _candidate_tracker.clear()
+        _alert_cooldowns.clear()
         reset_geofence_state(None)
+
+
+def get_candidate_status(tourist_id: str, rule_name: str) -> Optional[dict]:
+    """Inspect active candidate persistence tracking state."""
+    return _candidate_tracker.get((tourist_id, rule_name))
+
+
+def get_cooldown_status(tourist_id: str, rule_name: str) -> Dict[str, Any]:
+    """Check duplicate-suppression cooldown status."""
+    now_s = time.time()
+    last_alert = _alert_cooldowns.get((tourist_id, rule_name), 0.0)
+    in_cooldown = (now_s - last_alert < _DUPLICATE_SUPPRESSION_SECONDS)
+    remaining_s = max(0.0, _DUPLICATE_SUPPRESSION_SECONDS - (now_s - last_alert)) if in_cooldown else 0.0
+    return {
+        "inCooldown": in_cooldown,
+        "remainingSeconds": round(remaining_s, 2),
+        "lastAlertTimestampS": last_alert,
+    }
 
 
 # ── Validation ─────────────────────────────────────────────────────────────────
@@ -185,10 +228,7 @@ def _angle_diff(b1: float, b2: float) -> float:
 
 
 def _min_route_distance_meters(lat: float, lng: float, route: List[Tuple[float, float]]) -> Optional[float]:
-    """
-    Calculate minimum distance from coordinate to polyline route.
-    Returns None if route is empty.
-    """
+    """Calculate minimum distance from coordinate to polyline route."""
     if not route:
         return None
     if len(route) == 1:
@@ -199,7 +239,6 @@ def _min_route_distance_meters(lat: float, lng: float, route: List[Tuple[float, 
         lat_a, lng_a = route[i]
         lat_b, lng_b = route[i + 1]
 
-        # Equirectangular approximation for closest point on segment
         mid_lat = math.radians((lat_a + lat_b) / 2.0)
         cos_mid = math.cos(mid_lat)
 
@@ -223,15 +262,111 @@ def _min_route_distance_meters(lat: float, lng: float, route: List[Tuple[float, 
     return min_dist
 
 
-# ── Alerts ─────────────────────────────────────────────────────────────────────
+# ── Alerts & SOS Dispatch ──────────────────────────────────────────────────────
 def _write_alert(alert: dict):
     """Persist alert to MongoDB and Firebase Realtime Database."""
     db = get_db()
     if db is not None:
-        db["anomaly_alerts"].insert_one({**alert})
+        try:
+            db["anomaly_alerts"].insert_one({**alert})
+        except Exception:
+            pass
     fb = get_firebase_db()
     if fb:
-        fb.child("Alerts").push(alert)
+        try:
+            fb.child("Alerts").push(alert)
+        except Exception:
+            pass
+
+
+def dispatch_sos(
+    tourist_id: str,
+    latitude: float = 0.0,
+    longitude: float = 0.0,
+    timestamp_ms: Optional[int] = None,
+    sos_id: Optional[str] = None,
+) -> dict:
+    """
+    Emergency SOS trigger: bypasses ordinary anomaly persistence and cooldown filtering,
+    writes to Firebase/Mongo, and registers incident following the emergency-handling path.
+    """
+    now_ms = timestamp_ms or int(time.time() * 1000)
+    event_id = sos_id or str(uuid.uuid4())
+
+    # Write to MongoDB incidents collection
+    db = get_db()
+    if db is not None:
+        try:
+            db["incidents"].insert_one({
+                "incidentId": event_id,
+                "linkedSosId": event_id,
+                "touristId": tourist_id,
+                "latitude": latitude,
+                "longitude": longitude,
+                "timestamp": now_ms,
+                "status": "OPEN",
+                "createdAt": now_ms,
+                "resolvedAt": None,
+                "officerId": None,
+                "blockchainTxHash": None,
+            })
+        except Exception:
+            pass
+
+    # Write to Firebase SOS and Alerts paths
+    fb = get_firebase_db()
+    if fb:
+        try:
+            fb.child(f"SOS/{tourist_id}").set({
+                "latitude": latitude,
+                "longitude": longitude,
+                "timestamp": now_ms,
+                "status": "ACTIVE",
+            })
+            fb.child("Alerts").push({
+                "touristId": tourist_id,
+                "type": "SOS",
+                "ruleName": "EMERGENCY_SOS",
+                "riskLevel": "HIGH",
+                "latitude": latitude,
+                "longitude": longitude,
+                "timestamp": now_ms,
+                "sosId": event_id,
+            })
+        except Exception:
+            pass
+
+    # Structured alert object explicitly bypassing persistence and cooldown
+    alert = {
+        "alertId": str(uuid.uuid4()),
+        "touristId": tourist_id,
+        "type": "SOS",
+        "ruleName": "EMERGENCY_SOS",
+        "riskLevel": "HIGH",
+        "latitude": latitude,
+        "longitude": longitude,
+        "timestamp": now_ms,
+        "sosId": event_id,
+        "measuredValue": 1.0,
+        "threshold": 1.0,
+        "evidence": {
+            "ruleName": "EMERGENCY_SOS",
+            "timestamp": now_ms,
+            "measuredValue": 1.0,
+            "threshold": 1.0,
+            "unit": "emergency_trigger",
+            "details": {
+                "sosId": event_id,
+                "status": "EMERGENCY_DISPATCHED",
+                "bypassedPersistence": True,
+                "bypassedCooldown": True,
+            },
+        },
+        "acknowledged": False,
+        "escalatedAt": None,
+        "createdAt": now_ms,
+    }
+    return alert
 
 
 def _make_alert(
@@ -245,10 +380,7 @@ def _make_alert(
     unit: str = "",
     details: Optional[dict] = None,
 ) -> dict:
-    """
-    Generate an alert with structured anomaly evidence.
-    Includes ruleName, timestamp, measuredValue, and threshold.
-    """
+    """Generate an alert with structured anomaly evidence."""
     now_ms = int(time.time() * 1000)
     pt_ts = point.get("timestamp", now_ms)
 
@@ -279,40 +411,19 @@ def _make_alert(
     }
 
 
-# ── Movement Rule Evaluation ───────────────────────────────────────────────────
-def _analyse_all(tourist_id: str, point: dict) -> List[dict]:
+# ── Movement Rule Evaluation & Refinement Pipeline ─────────────────────────────
+def _evaluate_raw_rules(tourist_id: str, point: dict) -> List[dict]:
     """
-    Evaluate all applicable movement rules on the latest point.
-    Features that cannot be computed (unavailable) are represented as unknown
-    and are NOT flagged as anomalies.
-    Returns list of triggered alerts with structured evidence.
+    Evaluate feature-level detection rules on a valid point without refinement.
+    Returns list of unrefined candidate alerts.
     """
-    # Step 1: Validate point before any computation
-    is_valid, reason = validate_point(point)
-    if not is_valid:
-        # Invalid coordinates or timestamps are rejected; unavailable -> not an anomaly
-        return []
-
-    # Optional dynamic route update from point payload
-    if "referenceRoute" in point and point["referenceRoute"]:
-        set_reference_route(tourist_id, point["referenceRoute"])
-    elif "route" in point and point["route"]:
-        set_reference_route(tourist_id, point["route"])
-
     history = _history[tourist_id]
-    history.append(point)
-    _last_gps[tourist_id] = point["timestamp"]
-
     pts = list(history)
     latest = pts[-1]
     now_ms = latest["timestamp"]
-    alerts: List[dict] = []
+    candidates: List[dict] = []
 
-    # ──────────────────────────────────────────────────────────────────────────
     # Rule 1: ABNORMAL SPEED
-    # Requires: Previous valid point with dt > 0.
-    # If dt <= 0, feature is unknown (None), not an anomaly.
-    # ──────────────────────────────────────────────────────────────────────────
     if len(pts) >= 2:
         prev = pts[-2]
         dt_s = (latest["timestamp"] - prev["timestamp"]) / 1000.0
@@ -320,7 +431,7 @@ def _analyse_all(tourist_id: str, point: dict) -> List[dict]:
             dist_m = _haversine(prev["latitude"], prev["longitude"], latest["latitude"], latest["longitude"])
             speed_mps = dist_m / dt_s
             if speed_mps > _ABNORMAL_SPEED_MS:
-                alerts.append(_make_alert(
+                candidates.append(_make_alert(
                     tourist_id=tourist_id,
                     alert_type="ABNORMAL_SPEED",
                     risk_level="MEDIUM",
@@ -335,22 +446,17 @@ def _analyse_all(tourist_id: str, point: dict) -> List[dict]:
                     },
                 ))
 
-    # ──────────────────────────────────────────────────────────────────────────
     # Rule 2: PROLONGED INACTIVITY (STATIONARY)
-    # Requires: A window of points spanning >= _STATIONARY_WINDOW_MS.
-    # If window duration is insufficient, feature is unknown (None), not an anomaly.
-    # ──────────────────────────────────────────────────────────────────────────
     window = [p for p in pts if now_ms - p["timestamp"] <= _STATIONARY_WINDOW_MS]
     if len(window) >= _MIN_POINTS:
         window_duration_ms = window[-1]["timestamp"] - window[0]["timestamp"]
-        # Only evaluate if the observed duration meets or exceeds the stationary threshold
         if window_duration_ms >= _STATIONARY_WINDOW_MS:
             max_disp = max(
                 _haversine(p["latitude"], p["longitude"], latest["latitude"], latest["longitude"])
                 for p in window
             )
             if max_disp < _STATIONARY_DIST_M:
-                alerts.append(_make_alert(
+                candidates.append(_make_alert(
                     tourist_id=tourist_id,
                     alert_type="STATIONARY",
                     risk_level="LOW",
@@ -366,16 +472,10 @@ def _analyse_all(tourist_id: str, point: dict) -> List[dict]:
                     },
                 ))
 
-    # ──────────────────────────────────────────────────────────────────────────
     # Rule 3: DIRECTION CHANGES
-    # Requires: At least 3 points with displacement >= 3.0m between successive steps.
-    # If displacement is too small (GPS jitter / stationary) or < 3 points:
-    # Feature is unknown (None), not an anomaly.
-    # ──────────────────────────────────────────────────────────────────────────
     if len(pts) >= 3:
         p_prev2 = pts[-3]
         p_prev1 = pts[-2]
-
         d1 = _haversine(p_prev2["latitude"], p_prev2["longitude"], p_prev1["latitude"], p_prev1["longitude"])
         d2 = _haversine(p_prev1["latitude"], p_prev1["longitude"], latest["latitude"], latest["longitude"])
 
@@ -385,7 +485,7 @@ def _analyse_all(tourist_id: str, point: dict) -> List[dict]:
             delta_angle = _angle_diff(b1, b2)
 
             if delta_angle > _DIRECTION_CHANGE_DEG:
-                alerts.append(_make_alert(
+                candidates.append(_make_alert(
                     tourist_id=tourist_id,
                     alert_type="DIRECTION_CHANGE",
                     risk_level="MEDIUM",
@@ -402,17 +502,12 @@ def _analyse_all(tourist_id: str, point: dict) -> List[dict]:
                     },
                 ))
 
-    # ──────────────────────────────────────────────────────────────────────────
     # Rule 4: ROUTE DEVIATION
-    # Requires: Reference route available for this tourist.
-    # If reference route is not available:
-    # Feature is unknown (None), not an anomaly.
-    # ──────────────────────────────────────────────────────────────────────────
     ref_route = get_reference_route(tourist_id)
     if ref_route:
         route_dist_m = _min_route_distance_meters(latest["latitude"], latest["longitude"], ref_route)
         if route_dist_m is not None and route_dist_m > _ROUTE_DEVIATION_M:
-            alerts.append(_make_alert(
+            candidates.append(_make_alert(
                 tourist_id=tourist_id,
                 alert_type="ROUTE_DEVIATION",
                 risk_level="HIGH",
@@ -421,17 +516,10 @@ def _analyse_all(tourist_id: str, point: dict) -> List[dict]:
                 measured_value=round(route_dist_m, 2),
                 threshold=_ROUTE_DEVIATION_M,
                 unit="metres",
-                details={
-                    "referenceRouteWaypoints": len(ref_route),
-                },
+                details={"referenceRouteWaypoints": len(ref_route)},
             ))
 
-    # ──────────────────────────────────────────────────────────────────────────
     # Rule 5: GEOFENCE ZONE EVALUATION
-    # Evaluates RESTRICTED, HAZARD, and ORDINARY zones.
-    # Distinguishes CONFIRMED violations from UNCERTAIN_GPS, BOUNDARY_NOISE,
-    # and MISSING_DATA. Does not classify positions outside zones as unsafe.
-    # ──────────────────────────────────────────────────────────────────────────
     acc = float(point.get("accuracy", 0.0) or 0.0)
     geofence_res = evaluate_geofence(
         tourist_id=tourist_id,
@@ -440,15 +528,125 @@ def _analyse_all(tourist_id: str, point: dict) -> List[dict]:
         timestamp_ms=latest["timestamp"],
         accuracy=acc,
         history=pts,
+        apply_cooldown=False,
     )
     if geofence_res.get("alert"):
-        alerts.append(geofence_res["alert"])
+        candidates.append(geofence_res["alert"])
 
-    return alerts
+    return candidates
+
+
+def _analyse_all(tourist_id: str, point: dict) -> List[dict]:
+    """
+    Main movement-anomaly pipeline with explicit temporal persistence,
+    missing-observation freezing, duplicate suppression, and SOS emergency bypass.
+    """
+    # ── Path 1: Emergency SOS Bypass ──────────────────────────────────────────
+    # SOS events MUST bypass ordinary persistence and cooldown filtering
+    if point.get("type") == "SOS" or point.get("isSos") or point.get("sosId"):
+        sos_alert = dispatch_sos(
+            tourist_id=tourist_id,
+            latitude=point.get("latitude", 0.0),
+            longitude=point.get("longitude", 0.0),
+            timestamp_ms=point.get("timestamp"),
+            sos_id=point.get("sosId"),
+        )
+        return [sos_alert]
+
+    # ── Path 2: Coordinate & Timestamp Validation ─────────────────────────────
+    is_valid, reason = validate_point(point)
+    if not is_valid:
+        # Crucial: Missing observations do NOT automatically count as normal movement.
+        # Candidate persistence tracker state is preserved unchanged.
+        return []
+
+    # Optional dynamic route update from point payload
+    if "referenceRoute" in point and point["referenceRoute"]:
+        set_reference_route(tourist_id, point["referenceRoute"])
+    elif "route" in point and point["route"]:
+        set_reference_route(tourist_id, point["route"])
+
+    history = _history[tourist_id]
+    history.append(point)
+    _last_gps[tourist_id] = point["timestamp"]
+
+    # ── Path 3: Evaluate Raw Anomaly Candidates ───────────────────────────────
+    raw_candidates = _evaluate_raw_rules(tourist_id, point)
+    triggered_rules = set()
+
+    confirmed_alerts: List[dict] = []
+    pt_ts = point["timestamp"]
+    now_s = time.time()
+
+    # ── Path 4: Apply Temporal Persistence & Duplicate Suppression ────────────
+    for raw_alert in raw_candidates:
+        rule_name = raw_alert.get("ruleName") or raw_alert.get("type")
+        zone_id = raw_alert.get("evidence", {}).get("details", {}).get("zoneId")
+        rule_key = f"{rule_name}_{zone_id}" if zone_id else rule_name
+        triggered_rules.add(rule_key)
+        key = (tourist_id, rule_key)
+
+        # 1. Update candidate persistence tracking
+        if key not in _candidate_tracker:
+            _candidate_tracker[key] = {
+                "first_seen_ms": pt_ts,
+                "last_seen_ms": pt_ts,
+                "count": 1,
+                "alert": raw_alert,
+            }
+        else:
+            _candidate_tracker[key]["count"] += 1
+            _candidate_tracker[key]["last_seen_ms"] = pt_ts
+            _candidate_tracker[key]["alert"] = raw_alert
+
+        candidate = _candidate_tracker[key]
+        count = candidate["count"]
+        duration_ms = pt_ts - candidate["first_seen_ms"]
+
+        # Inactivity/Stationary already validates a 10-minute window; other rules
+        # require configured consecutive detections or temporal window span.
+        is_persistent = (
+            rule_name in ("PROLONGED_INACTIVITY", "STATIONARY")
+            or count >= _PERSISTENCE_MIN_CONSECUTIVE
+            or duration_ms >= _PERSISTENCE_WINDOW_MS
+        )
+
+        if not is_persistent:
+            # Transient anomaly pending confirmation — do not emit alert yet
+            continue
+
+        # 2. Duplicate Suppression Cooldown Check
+        last_alert_time = _alert_cooldowns.get(key, 0.0)
+        if now_s - last_alert_time < _DUPLICATE_SUPPRESSION_SECONDS:
+            # Duplicate alert suppressed during cooldown window
+            continue
+
+        # 3. Confirmed Persistent Alert — emit and update cooldown timestamp
+        _alert_cooldowns[key] = now_s
+
+        if "evidence" in raw_alert:
+            raw_alert["evidence"]["refinement"] = {
+                "status": "CONFIRMED_PERSISTENT",
+                "consecutiveDetections": count,
+                "persistenceDurationMs": duration_ms,
+                "bypassedCooldown": False,
+                "duplicateSuppressed": False,
+                "cooldownWindowSeconds": _DUPLICATE_SUPPRESSION_SECONDS,
+            }
+
+        confirmed_alerts.append(raw_alert)
+
+    # ── Path 5: Reset Candidate State for Rules with Verified Normal Movement ──
+    for key in list(_candidate_tracker.keys()):
+        if key[0] == tourist_id and key[1] not in triggered_rules:
+            # Verified normal movement on a valid observation resets the candidate tracker
+            del _candidate_tracker[key]
+
+    return confirmed_alerts
 
 
 def _analyse(tourist_id: str, point: dict) -> Optional[dict]:
-    """Preserve existing interface: returns the primary alert if any, else None."""
+    """Preserve existing interface: returns the primary refined alert if any, else None."""
     alerts = _analyse_all(tourist_id, point)
     return alerts[0] if alerts else None
 

@@ -64,7 +64,7 @@ class GeoFenceZone(BaseModel):
 class AnomalyAlert(BaseModel):
     alertId: str = Field(..., description="UUID v4 string")
     touristId: str
-    type: Literal["STATIONARY", "ABNORMAL_SPEED", "GPS_LOSS", "ROUTE_DEVIATION", "DIRECTION_CHANGE", "ZONE_ENTRY", "ZONE_VIOLATION"]
+    type: Literal["STATIONARY", "ABNORMAL_SPEED", "GPS_LOSS", "ROUTE_DEVIATION", "DIRECTION_CHANGE", "ZONE_ENTRY", "ZONE_VIOLATION", "SOS"]
     riskLevel: Literal["LOW", "MEDIUM", "HIGH", "RESTRICTED"]
     latitude: float
     longitude: float

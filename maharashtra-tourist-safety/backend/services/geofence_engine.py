@@ -141,6 +141,8 @@ def evaluate_geofence(
     accuracy: float = 0.0,
     history: Optional[List[dict]] = None,
     blockchain_client=None,
+    apply_cooldown: bool = True,
+    is_sos: bool = False,
 ) -> Dict[str, Any]:
     """
     Comprehensive geofence evaluation for a tourist position.
@@ -239,7 +241,9 @@ def evaluate_geofence(
         zone_id = str(zone.get("zoneId", zone.get("name", "unknown")))
         key = (tourist_id, zone_id)
         now_s = time.time()
-        in_cooldown = (now_s - _cooldown.get(key, 0) < _COOLDOWN_SECONDS)
+        in_cooldown = False
+        if apply_cooldown and not is_sos:
+            in_cooldown = (now_s - _cooldown.get(key, 0) < _COOLDOWN_SECONDS)
 
         rule_name = "RESTRICTED_ZONE_VIOLATION" if category == "RESTRICTED" else "HAZARD_ZONE_VIOLATION"
         risk_level = "RESTRICTED" if category == "RESTRICTED" else "HIGH"

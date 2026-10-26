@@ -1,0 +1,12 @@
+{
+  "generatedAtUtc": "2026-10-26T15:47:34.789329+00:00",
+  "inputCsv": "C:\\Users\\Tanish\\Desktop\\EDI IV\\maharashtra-tourist-safety\\backend\\data\\synthetic\\evaluation_comparison.csv",
+  "inputJson": "C:\\Users\\Tanish\\Desktop\\EDI IV\\maharashtra-tourist-safety\\backend\\data\\synthetic\\evaluation_comparison.json",
+  "inputGroundTruth": "C:\\Users\\Tanish\\Desktop\\EDI IV\\maharashtra-tourist-safety\\backend\\data\\synthetic\\ground_truth_labels.json",
+  "totalSamplePoints": 289,
+  "figures": {
+    "fig1_configuration_comparison": "C:\\Users\\Tanish\\Desktop\\EDI IV\\maharashtra-tourist-safety\\backend\\data\\figures\\fig1_configuration_comparison.png",
+    "fig2_false_positive_behaviour": "C:\\Users\\Tanish\\Desktop\\EDI IV\\maharashtra-tourist-safety\\backend\\data\\figures\\fig2_false_positive_behaviour.png",
+    "fig3_alert_category_distribution": "C:\\Users\\Tanish\\Desktop\\EDI IV\\maharashtra-tourist-safety\\backend\\data\\figures\\fig3_alert_category_distribution.png"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "evaluatedAtUtc": "2026-10-26T15:43:45.333208+00:00",
+  "totalTrajectoryPoints": 289,
+  "totalLabelledPoints": 289,
+  "totalTrajectoryHours": 1.288,
+  "configurations": {
+    "configA": {
+      "configName": "A: Movement Rules Only",
+      "status": "COMPLETED",
+      "pointMetrics": {
+        "precision": 0.9286,
+        "recall": 0.3171,
+        "f1Score": 0.4728,
+        "falsePositiveRate": 0.0097,
+        "truePositives": 26,
+        "falsePositives": 2,
+        "falseNegatives": 56,
+        "trueNegatives": 205
+      },
+      "operationalMetrics": {
+        "totalAlerts": 28,
+        "totalTrajectoryHours": 1.29,
+        "alertsPerHour": 21.75
+      },
+      "eventMetrics": {
+        "totalEvents": 6,
+        "detectedEvents": 3,
+        "missedEvents": 2,
+        "eventRecall": 0.6,
+        "avgDetectionDelaySec": 10.0
+      }
+    },
+    "configB": {
+      "configName": "B: Movement + Geospatial",
+      "status": "COMPLETED",
+      "pointMetrics": {
+        "precision": 0.8228,
+        "recall": 0.7927,
+        "f1Score": 0.8075,
+        "falsePositiveRate": 0.0676,
+        "truePositives": 65,
+        "falsePositives": 14,
+        "falseNegatives": 17,
+        "trueNegatives": 193
+      },
+      "operationalMetrics": {
+        "totalAlerts": 79,
+        "totalTrajectoryHours": 1.29,
+        "alertsPerHour": 61.36
+      },
+      "eventMetrics": {
+        "totalEvents": 6,
+        "detectedEvents": 5,
+        "missedEvents": 0,
+        "eventRecall": 1.0,
+        "avgDetectionDelaySec": 6.0
+      }
+    },
+    "configC": {
+      "configName": "C: Full Pipeline (Refined)",
+      "status": "COMPLETED",
+      "pointMetrics": {
+        "precision": 0.6667,
+        "recall": 0.0488,
+        "f1Score": 0.0909,
+        "falsePositiveRate": 0.0097,
+        "truePositives": 4,
+        "falsePositives": 2,
+        "falseNegatives": 78,
+        "trueNegatives": 205
+      },
+      "operationalMetrics": {
+        "totalAlerts": 6,
+        "totalTrajectoryHours": 1.29,
+        "alertsPerHour": 4.66
+      },
+      "eventMetrics": {
+        "totalEvents": 6,
+        "detectedEvents": 4,
+        "missedEvents": 1,
+        "eventRecall": 0.8,
+        "avgDetectionDelaySec": 18.75
+      }
+    },
+    "configD": {
+      "configName": "D: Isolation Forest",
+      "status": "COMPLETED",
+      "pointMetrics": {
+        "precision": 0.8448,
+        "recall": 0.5976,
+        "f1Score": 0.7,
+        "falsePositiveRate": 0.0435,
+        "truePositives": 49,
+        "falsePositives": 9,
+        "falseNegatives": 33,
+        "trueNegatives": 198
+      },
+      "operationalMetrics": {
+        "totalAlerts": 58,
+        "totalTrajectoryHours": 1.29,
+        "alertsPerHour": 45.05
+      },
+      "eventMetrics": {
+        "totalEvents": 6,
+        "detectedEvents": 4,
+        "missedEvents": 1,
+        "eventRecall": 0.8,
+        "avgDetectionDelaySec": 41.25
+      }
+    }
+  }
+}

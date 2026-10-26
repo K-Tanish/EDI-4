@@ -417,7 +417,17 @@ def _evaluate_raw_rules(tourist_id: str, point: dict) -> List[dict]:
     Evaluate feature-level detection rules on a valid point without refinement.
     Returns list of unrefined candidate alerts.
     """
+    # Dynamic route update from point payload
+    if "referenceRoute" in point and point["referenceRoute"]:
+        set_reference_route(tourist_id, point["referenceRoute"])
+    elif "route" in point and point["route"]:
+        set_reference_route(tourist_id, point["route"])
+
     history = _history[tourist_id]
+    if not history or history[-1] is not point:
+        history.append(point)
+        _last_gps[tourist_id] = point["timestamp"]
+
     pts = list(history)
     latest = pts[-1]
     now_ms = latest["timestamp"]

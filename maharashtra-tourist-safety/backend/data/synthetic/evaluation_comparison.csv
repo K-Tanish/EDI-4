@@ -1,0 +1,5 @@
+Configuration,EvaluationUnit,Precision,Recall,F1Score,FalsePositiveRate,TotalAlerts,AlertsPerTrajectoryHour,AvgDetectionDelaySec,TruePositives,FalsePositives,FalseNegatives,TrueNegatives
+A: Movement Rules Only,Point-level,0.9286,0.3171,0.4728,0.0097,28,21.75,10.0000,26,2,56,205
+B: Movement + Geospatial,Point-level,0.8228,0.7927,0.8075,0.0676,79,61.36,6.0000,65,14,17,193
+C: Full Pipeline (Refined),Point-level,0.6667,0.0488,0.0909,0.0097,6,4.66,18.7500,4,2,78,205
+D: Isolation Forest,Point-level,0.8448,0.5976,0.7000,0.0435,58,45.05,41.2500,49,9,33,198

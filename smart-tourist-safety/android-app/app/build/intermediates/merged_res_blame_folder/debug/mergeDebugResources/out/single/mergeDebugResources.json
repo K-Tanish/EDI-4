@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\Nitro\\.gradle\\daemon\\9.3.1\\com.tourist.safety.app-debug-39:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Nitro\\.gradle\\daemon\\9.3.1\\com.tourist.safety.app-main-41:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Nitro\\.gradle\\daemon\\9.3.1\\com.tourist.safety.app-debug-39:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Nitro\\.gradle\\daemon\\9.3.1\\com.tourist.safety.app-main-41:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Nitro\\.gradle\\daemon\\9.3.1\\com.tourist.safety.app-debug-39:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Nitro\\.gradle\\daemon\\9.3.1\\com.tourist.safety.app-main-41:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Nitro\\.gradle\\daemon\\9.3.1\\com.tourist.safety.app-debug-39:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Nitro\\.gradle\\daemon\\9.3.1\\com.tourist.safety.app-main-41:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.tourist.safety.app-debug-39:/layout_activity_main.xml.flat",
+        "source": "com.tourist.safety.app-main-41:/layout/activity_main.xml"
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\Nitro\\.gradle\\daemon\\9.3.1\\com.tourist.safety.app-mergeDebugResources-38:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Nitro\\.gradle\\daemon\\9.3.1\\com.tourist.safety.app-main-41:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.tourist.safety.app-mergeDebugResources-38:/layout/activity_main.xml",
+        "source": "com.tourist.safety.app-main-41:/layout/activity_main.xml"
+    }
+]

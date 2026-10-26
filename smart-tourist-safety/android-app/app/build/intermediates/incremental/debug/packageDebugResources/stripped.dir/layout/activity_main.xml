@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#121212"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tourist Safety"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tvTouristId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ID: Loading..."
+        android:textColor="#90CAF9"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#1E1E1E"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp">
+
+        <View
+            android:id="@+id/statusIndicator"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="#757575"
+            android:layout_marginEnd="12dp"
+            android:layout_gravity="center_vertical"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvStatusLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OFFLINE"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tracking not started"
+                android:textColor="#AAAAAA"
+                android:textSize="13sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnTracking"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Start Tracking"
+        android:textSize="16sp"
+        android:backgroundTint="#1565C0"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnSos"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:text="SOS EMERGENCY"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:backgroundTint="#C62828"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnDemo"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Start Demo Mode"
+        android:textSize="16sp"
+        android:backgroundTint="#2E7D32"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btnTestConnection"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Test Backend Connection"
+        android:textSize="14sp"
+        android:backgroundTint="#37474F"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Demo mode simulates 5 tourists for dashboard testing"
+        android:textColor="#666666"
+        android:textSize="12sp"
+        android:gravity="center"/>
+
+</LinearLayout>

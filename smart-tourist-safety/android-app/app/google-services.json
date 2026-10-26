@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "685468662266",
+    "firebase_url": "https://tourist-safety-sys-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "tourist-safety-sys",
+    "storage_bucket": "tourist-safety-sys.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685468662266:android:f767b02df0799314f00c43",
+        "android_client_info": {
+          "package_name": "com.example.touristsafetyapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpy5go8R4gzuuXrrInf9lOELHsSoZC_0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685468662266:android:0e4db5d028c7f24ef00c43",
+        "android_client_info": {
+          "package_name": "com.tourist.safety"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpy5go8R4gzuuXrrInf9lOELHsSoZC_0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

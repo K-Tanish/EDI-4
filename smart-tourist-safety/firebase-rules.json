@@ -1,0 +1,30 @@
+﻿{
+  "rules": {
+    "LiveLocation": {
+      "$touristId": {
+        ".read":  "auth != null && (auth.token.role === 'AUTHORITY' || auth.token.role === 'ADMIN' || auth.uid === $touristId)",
+        ".write": "auth != null && auth.uid === $touristId"
+      }
+    },
+    "LocationHistory": {
+      "$touristId": {
+        ".read":  "auth != null && (auth.token.role === 'AUTHORITY' || auth.token.role === 'ADMIN')",
+        ".write": "auth != null && auth.uid === $touristId"
+      }
+    },
+    "SOS": {
+      "$touristId": {
+        ".read":  "auth != null && (auth.token.role === 'AUTHORITY' || auth.token.role === 'ADMIN' || auth.uid === $touristId)",
+        ".write": "auth != null && auth.uid === $touristId"
+      }
+    },
+    "Alerts": {
+      ".read":  "auth != null && (auth.token.role === 'AUTHORITY' || auth.token.role === 'ADMIN')",
+      ".write": "auth != null"
+    },
+    "Zones": {
+      ".read":  "auth != null",
+      ".write": "auth != null && auth.token.role === 'ADMIN'"
+    }
+  }
+}

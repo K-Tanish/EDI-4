@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Maharashtra Tourist Safety — Control Room</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">&#128737;</div>
+            <div>
+                <h1>Maharashtra Tourist Safety — Control Room</h1>
+                <span class="subtitle">Real-Time Monitoring &amp; Incident Response</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="stat-box"><span class="stat-num" id="countActive">0</span><span class="stat-label">Active</span></div>
+            <div class="stat-box caution"><span class="stat-num" id="countCaution">0</span><span class="stat-label">Caution</span></div>
+            <div class="stat-box danger"><span class="stat-num" id="countDanger">0</span><span class="stat-label">Danger</span></div>
+            <div class="stat-box sos"><span class="stat-num" id="countSos">0</span><span class="stat-label">SOS</span></div>
+            <div class="connection-status" id="connectionStatus"><span class="dot offline"></span> Connecting...</div>
+        </div>
+    </header>
+
+    <!-- Filter bar -->
+    <div class="filter-bar">
+        <label>Region:
+            <select id="filterRegion" onchange="applyFilters()">
+                <option value="">All</option>
+                <option>Mumbai</option><option>Pune</option><option>Nagpur</option>
+                <option>Konkan</option><option>Mahabaleshwar</option><option>Tadoba</option>
+            </select>
+        </label>
+        <label>Risk:
+            <select id="filterRisk" onchange="applyFilters()">
+                <option value="">All</option>
+                <option>SAFE</option><option>CAUTION</option><option>DANGER</option>
+            </select>
+        </label>
+        <label>Alert type:
+            <select id="filterAlertType" onchange="applyFilters()">
+                <option value="">All</option>
+                <option>SOS</option><option>ZONE_ENTRY</option><option>STATIONARY</option>
+                <option>ABNORMAL_SPEED</option><option>GPS_LOSS</option>
+            </select>
+        </label>
+    </div>
+
+    <main class="main-grid">
+        <!-- LEFT: Tourist Cards -->
+        <section class="panel tourists-panel">
+            <div class="panel-header">
+                <h2>&#128100; Live Tourists</h2>
+                <span class="badge" id="touristCount">0</span>
+            </div>
+            <div id="touristCards" class="cards-container">
+                <div class="empty-state">Waiting for tourists to connect...</div>
+            </div>
+        </section>
+
+        <!-- CENTER: Map (centred on Maharashtra) -->
+        <section class="panel map-panel">
+            <div class="panel-header">
+                <h2>&#127758; Maharashtra Live Map</h2>
+                <button class="btn-small" onclick="resetMapView()">Reset View</button>
+            </div>
+            <div id="map"></div>
+        </section>
+
+        <!-- RIGHT: Alerts + Incidents -->
+        <section class="panel alerts-panel">
+            <div class="panel-header">
+                <h2>&#9888; Alerts &amp; Incidents</h2>
+                <button class="btn-small" onclick="clearAlerts()">Clear</button>
+            </div>
+
+            <div class="alert-section">
+                <h3 class="alert-section-title sos-title">&#128680; SOS Emergencies</h3>
+                <div id="sosList" class="alert-list"><div class="empty-state">No active SOS</div></div>
+            </div>
+
+            <div class="alert-section">
+                <h3 class="alert-section-title danger-title">&#128308; Zone Alerts</h3>
+                <div id="dangerList" class="alert-list"><div class="empty-state">No zone alerts</div></div>
+            </div>
+
+            <div class="alert-section">
+                <h3 class="alert-section-title anomaly-title">&#128202; Anomaly Alerts</h3>
+                <div id="anomalyList" class="alert-list"><div class="empty-state">No anomalies</div></div>
+            </div>
+
+            <!-- Incident Manager -->
+            <div class="alert-section" id="incidentSection">
+                <h3 class="alert-section-title">&#128203; Incident Manager</h3>
+                <div id="incidentList" class="alert-list"><div class="empty-state">No open incidents</div></div>
+                <button class="btn-primary" onclick="showCreateIncident()">+ New Incident</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Tourist Detail Modal -->
+    <div id="detailModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Tourist Detail</h3>
+                <button onclick="closeModal('detailModal')" class="btn-close">&#10005;</button>
+            </div>
+            <div id="detailBody"></div>
+            <div id="historyMap" style="height:300px; margin-top:12px;"></div>
+        </div>
+    </div>
+
+    <!-- Create Incident Modal -->
+    <div id="incidentModal" class="modal hidden">
+        <div class="modal-content" style="max-width:400px">
+            <div class="modal-header">
+                <h3>Create Incident</h3>
+                <button onclick="closeModal('incidentModal')" class="btn-close">&#10005;</button>
+            </div>
+            <label>Tourist ID<input id="incTouristId" class="input-field" placeholder="tourist UUID"/></label>
+            <label>Linked SOS ID (optional)<input id="incSosId" class="input-field" placeholder="sos UUID"/></label>
+            <button class="btn-primary" onclick="submitIncident()">Create</button>
+        </div>
+    </div>
+
+    <!-- Audible alert sound (base64 beep) -->
+    <audio id="alertSound" src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA=" preload="auto"></audio>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

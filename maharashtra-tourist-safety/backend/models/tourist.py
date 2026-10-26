@@ -52,8 +52,8 @@ class Incident(BaseModel):
 class GeoFenceZone(BaseModel):
     zoneId: str
     name: str
-    type: Literal["URBAN", "COASTAL", "HILL_STATION", "FOREST", "HERITAGE"]
-    riskLevel: Literal["LOW", "MEDIUM", "HIGH", "RESTRICTED"]
+    type: Literal["URBAN", "COASTAL", "HILL_STATION", "FOREST", "HERITAGE", "HAZARD", "RESTRICTED", "ORDINARY"]
+    riskLevel: Literal["LOW", "MEDIUM", "HIGH", "RESTRICTED", "HAZARD"]
     centerLat: float
     centerLng: float
     radiusMeters: float
@@ -64,8 +64,8 @@ class GeoFenceZone(BaseModel):
 class AnomalyAlert(BaseModel):
     alertId: str = Field(..., description="UUID v4 string")
     touristId: str
-    type: Literal["STATIONARY", "ABNORMAL_SPEED", "GPS_LOSS", "ROUTE_DEVIATION", "DIRECTION_CHANGE"]
-    riskLevel: Literal["LOW", "MEDIUM", "HIGH"]
+    type: Literal["STATIONARY", "ABNORMAL_SPEED", "GPS_LOSS", "ROUTE_DEVIATION", "DIRECTION_CHANGE", "ZONE_ENTRY", "ZONE_VIOLATION"]
+    riskLevel: Literal["LOW", "MEDIUM", "HIGH", "RESTRICTED"]
     latitude: float
     longitude: float
     timestamp: int = Field(..., description="Unix timestamp in milliseconds")

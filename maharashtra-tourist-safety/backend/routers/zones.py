@@ -50,8 +50,8 @@ def seed_zones_if_empty():
 # ── Request models ─────────────────────────────────────────────────────────────
 class ZoneBody(BaseModel):
     name: str
-    type: Literal["URBAN", "COASTAL", "HILL_STATION", "FOREST", "HERITAGE"]
-    riskLevel: Literal["LOW", "MEDIUM", "HIGH", "RESTRICTED"]
+    type: Literal["URBAN", "COASTAL", "HILL_STATION", "FOREST", "HERITAGE", "HAZARD", "RESTRICTED", "ORDINARY"]
+    riskLevel: Literal["LOW", "MEDIUM", "HIGH", "RESTRICTED", "HAZARD"]
     centerLat: float
     centerLng: float
     radiusMeters: float
@@ -59,7 +59,7 @@ class ZoneBody(BaseModel):
 
 
 class ZonePatch(BaseModel):
-    riskLevel: Optional[Literal["LOW", "MEDIUM", "HIGH", "RESTRICTED"]] = None
+    riskLevel: Optional[Literal["LOW", "MEDIUM", "HIGH", "RESTRICTED", "HAZARD"]] = None
     active: Optional[bool] = None
     radiusMeters: Optional[float] = None
 

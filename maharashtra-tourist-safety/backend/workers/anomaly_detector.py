@@ -37,6 +37,8 @@ except Exception:
     def get_db():
         return None
 
+from services.geofence_engine import evaluate_geofence, reset_geofence_state
+
 # ── Configured Thresholds ──────────────────────────────────────────────────────
 _STATIONARY_DIST_M: float = getattr(settings, "ANOMALY_STATIONARY_DIST_M", 10.0)
 _STATIONARY_WINDOW_MS: int = getattr(settings, "ANOMALY_STATIONARY_WINDOW_MS", 600_000)
@@ -102,15 +104,17 @@ def clear_reference_route(tourist_id: str) -> None:
 
 
 def reset_state(tourist_id: Optional[str] = None) -> None:
-    """Reset tracking history, last known GPS, and routes (used for test teardown)."""
+    """Reset tracking history, last known GPS, routes, and geofence cooldowns."""
     if tourist_id:
         _history.pop(tourist_id, None)
         _last_gps.pop(tourist_id, None)
         _reference_routes.pop(tourist_id, None)
+        reset_geofence_state(tourist_id)
     else:
         _history.clear()
         _last_gps.clear()
         _reference_routes.clear()
+        reset_geofence_state(None)
 
 
 # ── Validation ─────────────────────────────────────────────────────────────────
@@ -421,6 +425,24 @@ def _analyse_all(tourist_id: str, point: dict) -> List[dict]:
                     "referenceRouteWaypoints": len(ref_route),
                 },
             ))
+
+    # ──────────────────────────────────────────────────────────────────────────
+    # Rule 5: GEOFENCE ZONE EVALUATION
+    # Evaluates RESTRICTED, HAZARD, and ORDINARY zones.
+    # Distinguishes CONFIRMED violations from UNCERTAIN_GPS, BOUNDARY_NOISE,
+    # and MISSING_DATA. Does not classify positions outside zones as unsafe.
+    # ──────────────────────────────────────────────────────────────────────────
+    acc = float(point.get("accuracy", 0.0) or 0.0)
+    geofence_res = evaluate_geofence(
+        tourist_id=tourist_id,
+        latitude=latest["latitude"],
+        longitude=latest["longitude"],
+        timestamp_ms=latest["timestamp"],
+        accuracy=acc,
+        history=pts,
+    )
+    if geofence_res.get("alert"):
+        alerts.append(geofence_res["alert"])
 
     return alerts
 

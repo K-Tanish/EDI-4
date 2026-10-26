@@ -62,6 +62,8 @@ async def update_location(body: LocationPayload, _=Depends(require_tourist)):
         "latitude": body.latitude,
         "longitude": body.longitude,
         "timestamp": body.timestamp,
+        "accuracy": body.accuracy,
+        "isOfflineBuffered": body.isOfflineBuffered,
     })
 
     return {"status": "ok"}

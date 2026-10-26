@@ -1,0 +1,3801 @@
+{
+  "datasetSeed": 42,
+  "totalLabelledPoints": 289,
+  "totalAnomalousPoints": 82,
+  "scenarioEventSummaries": [
+    {
+      "eventId": "event_tourist_inactivity_001_inactivity",
+      "touristId": "tourist_inactivity_001",
+      "scenario": "prolonged_inactivity",
+      "anomalyType": "PROLONGED_INACTIVITY",
+      "stationaryStartTime": 1793005425000,
+      "thresholdExceededTime": 1793006025000,
+      "totalDurationMs": 750000,
+      "anchorLatitude": 18.522247,
+      "anchorLongitude": 73.859581
+    },
+    {
+      "eventId": "event_tourist_speed_001_speed",
+      "touristId": "tourist_speed_001",
+      "scenario": "abnormal_speed",
+      "anomalyType": "ABNORMAL_SPEED",
+      "anomalyPoints": [
+        {
+          "pointIndex": 14,
+          "timestamp": 1793005425000,
+          "speedMps": 48.0
+        },
+        {
+          "pointIndex": 15,
+          "timestamp": 1793005440000,
+          "speedMps": 48.0
+        }
+      ],
+      "speedThresholdMps": 30.0
+    },
+    {
+      "eventId": "event_tourist_restricted_001_zone_entry",
+      "touristId": "tourist_restricted_001",
+      "scenario": "restricted_zone_entry",
+      "anomalyType": "RESTRICTED_ZONE_ENTRY",
+      "zoneName": "Tadoba Tiger Reserve",
+      "zoneRiskLevel": "RESTRICTED",
+      "boundaryRadiusM": 30000.0,
+      "crossingPointIndex": 9,
+      "crossingTimestamp": 1793005335000
+    },
+    {
+      "eventId": "event_tourist_boundary_noise_001_boundary_noise",
+      "touristId": "tourist_boundary_noise_001",
+      "scenario": "gps_boundary_noise",
+      "anomalyType": "GPS_BOUNDARY_NOISE",
+      "zoneName": "Dharavi",
+      "noiseStdMeters": 35.0,
+      "totalCrossingsFromNoise": 11
+    },
+    {
+      "eventId": "event_tourist_missing_gps_001_missing_gps",
+      "touristId": "tourist_missing_gps_001",
+      "scenario": "missing_gps_observations",
+      "anomalyType": "MISSING_GPS_OBSERVATION",
+      "gapStartTimestamp": 1793005380000,
+      "gapEndTimestamp": 1793005800000,
+      "gapDurationSeconds": 420,
+      "timeoutThresholdSeconds": 300,
+      "isTimeoutExceeded": true,
+      "lastObservedLatitude": 18.521888,
+      "lastObservedLongitude": 73.858269
+    },
+    {
+      "eventId": "event_tourist_sos_001_sos",
+      "touristId": "tourist_sos_001",
+      "scenario": "sos_event",
+      "anomalyType": "SOS_EVENT",
+      "triggerIndex": 12,
+      "triggerTimestamp": 1793005395000,
+      "latitude": 16.988354,
+      "longitude": 73.310886
+    }
+  ],
+  "pointLabels": [
+    {
+      "pointIndex": 0,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005215000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.11,
+        "accuracy": 6.31
+      }
+    },
+    {
+      "pointIndex": 1,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005230000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.44,
+        "accuracy": 7.01
+      }
+    },
+    {
+      "pointIndex": 2,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005245000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.14,
+        "accuracy": 3.98
+      }
+    },
+    {
+      "pointIndex": 3,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005260000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.35,
+        "accuracy": 3.12
+      }
+    },
+    {
+      "pointIndex": 4,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005275000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.2,
+        "accuracy": 3.99
+      }
+    },
+    {
+      "pointIndex": 5,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005290000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.39,
+        "accuracy": 6.64
+      }
+    },
+    {
+      "pointIndex": 6,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005305000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.1,
+        "accuracy": 4.53
+      }
+    },
+    {
+      "pointIndex": 7,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005320000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.18,
+        "accuracy": 7.31
+      }
+    },
+    {
+      "pointIndex": 8,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005335000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.27,
+        "accuracy": 6.81
+      }
+    },
+    {
+      "pointIndex": 9,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005350000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.4,
+        "accuracy": 6.63
+      }
+    },
+    {
+      "pointIndex": 10,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005365000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.46,
+        "accuracy": 4.7
+      }
+    },
+    {
+      "pointIndex": 11,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005380000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.38,
+        "accuracy": 6.73
+      }
+    },
+    {
+      "pointIndex": 12,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005395000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.41,
+        "accuracy": 6.17
+      }
+    },
+    {
+      "pointIndex": 13,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005410000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.12,
+        "accuracy": 4.03
+      }
+    },
+    {
+      "pointIndex": 14,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005425000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.24,
+        "accuracy": 3.45
+      }
+    },
+    {
+      "pointIndex": 15,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005440000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.24,
+        "accuracy": 5.86
+      }
+    },
+    {
+      "pointIndex": 16,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005455000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.28,
+        "accuracy": 4.2
+      }
+    },
+    {
+      "pointIndex": 17,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005470000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.57,
+        "accuracy": 5.92
+      }
+    },
+    {
+      "pointIndex": 18,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005485000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.4,
+        "accuracy": 3.74
+      }
+    },
+    {
+      "pointIndex": 19,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005500000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.29,
+        "accuracy": 7.45
+      }
+    },
+    {
+      "pointIndex": 20,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005515000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.42,
+        "accuracy": 6.79
+      }
+    },
+    {
+      "pointIndex": 21,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005530000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.49,
+        "accuracy": 4.03
+      }
+    },
+    {
+      "pointIndex": 22,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005545000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.12,
+        "accuracy": 3.95
+      }
+    },
+    {
+      "pointIndex": 23,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005560000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.57,
+        "accuracy": 6.94
+      }
+    },
+    {
+      "pointIndex": 24,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005575000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.26,
+        "accuracy": 7.12
+      }
+    },
+    {
+      "pointIndex": 25,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005590000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.33,
+        "accuracy": 4.19
+      }
+    },
+    {
+      "pointIndex": 26,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005605000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.22,
+        "accuracy": 5.63
+      }
+    },
+    {
+      "pointIndex": 27,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005620000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.55,
+        "accuracy": 4.8
+      }
+    },
+    {
+      "pointIndex": 28,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005635000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.21,
+        "accuracy": 3.41
+      }
+    },
+    {
+      "pointIndex": 29,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005650000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.12,
+        "accuracy": 3.49
+      }
+    },
+    {
+      "pointIndex": 30,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005665000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.41,
+        "accuracy": 3.29
+      }
+    },
+    {
+      "pointIndex": 31,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005680000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.29,
+        "accuracy": 7.48
+      }
+    },
+    {
+      "pointIndex": 32,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005695000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.36,
+        "accuracy": 3.05
+      }
+    },
+    {
+      "pointIndex": 33,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005710000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.46,
+        "accuracy": 6.07
+      }
+    },
+    {
+      "pointIndex": 34,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005725000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.37,
+        "accuracy": 3.5
+      }
+    },
+    {
+      "pointIndex": 35,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005740000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.32,
+        "accuracy": 5.04
+      }
+    },
+    {
+      "pointIndex": 36,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005755000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.58,
+        "accuracy": 5.25
+      }
+    },
+    {
+      "pointIndex": 37,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005770000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.19,
+        "accuracy": 7.11
+      }
+    },
+    {
+      "pointIndex": 38,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005785000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.54,
+        "accuracy": 5.74
+      }
+    },
+    {
+      "pointIndex": 39,
+      "touristId": "tourist_normal_001",
+      "timestamp": 1793005800000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.18,
+        "accuracy": 6.43
+      }
+    },
+    {
+      "pointIndex": 0,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005215000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.49,
+        "accuracy": 4.46
+      }
+    },
+    {
+      "pointIndex": 1,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005230000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.11,
+        "accuracy": 7.18
+      }
+    },
+    {
+      "pointIndex": 2,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005245000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.54,
+        "accuracy": 3.26
+      }
+    },
+    {
+      "pointIndex": 3,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005260000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.54,
+        "accuracy": 7.26
+      }
+    },
+    {
+      "pointIndex": 4,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005275000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.14,
+        "accuracy": 6.42
+      }
+    },
+    {
+      "pointIndex": 5,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005290000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.48,
+        "accuracy": 3.58
+      }
+    },
+    {
+      "pointIndex": 6,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005305000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.34,
+        "accuracy": 6.93
+      }
+    },
+    {
+      "pointIndex": 7,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005320000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.31,
+        "accuracy": 3.95
+      }
+    },
+    {
+      "pointIndex": 8,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005335000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.37,
+        "accuracy": 4.4
+      }
+    },
+    {
+      "pointIndex": 9,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005350000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.6,
+        "accuracy": 5.92
+      }
+    },
+    {
+      "pointIndex": 10,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005365000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.32,
+        "accuracy": 4.01
+      }
+    },
+    {
+      "pointIndex": 11,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005380000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.27,
+        "accuracy": 5.65
+      }
+    },
+    {
+      "pointIndex": 12,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005395000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.22,
+        "accuracy": 5.84
+      }
+    },
+    {
+      "pointIndex": 13,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005410000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.21,
+        "accuracy": 7.07
+      }
+    },
+    {
+      "pointIndex": 14,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005425000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.53,
+        "accuracy": 6.01
+      }
+    },
+    {
+      "pointIndex": 15,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005440000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.21,
+        "accuracy": 3.6
+      }
+    },
+    {
+      "pointIndex": 16,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005455000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.57,
+        "accuracy": 6.53
+      }
+    },
+    {
+      "pointIndex": 17,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005470000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.5,
+        "accuracy": 3.86
+      }
+    },
+    {
+      "pointIndex": 18,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005485000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.15,
+        "accuracy": 5.1
+      }
+    },
+    {
+      "pointIndex": 19,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005500000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.46,
+        "accuracy": 6.03
+      }
+    },
+    {
+      "pointIndex": 20,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005515000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.59,
+        "accuracy": 4.53
+      }
+    },
+    {
+      "pointIndex": 21,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005530000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.53,
+        "accuracy": 4.12
+      }
+    },
+    {
+      "pointIndex": 22,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005545000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.2,
+        "accuracy": 4.25
+      }
+    },
+    {
+      "pointIndex": 23,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005560000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.22,
+        "accuracy": 7.15
+      }
+    },
+    {
+      "pointIndex": 24,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005575000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.32,
+        "accuracy": 3.23
+      }
+    },
+    {
+      "pointIndex": 25,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005590000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.6,
+        "accuracy": 6.76
+      }
+    },
+    {
+      "pointIndex": 26,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005605000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.58,
+        "accuracy": 3.75
+      }
+    },
+    {
+      "pointIndex": 27,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005620000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.34,
+        "accuracy": 3.96
+      }
+    },
+    {
+      "pointIndex": 28,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005635000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.3,
+        "accuracy": 7.43
+      }
+    },
+    {
+      "pointIndex": 29,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005650000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.23,
+        "accuracy": 6.53
+      }
+    },
+    {
+      "pointIndex": 30,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005665000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.33,
+        "accuracy": 7.48
+      }
+    },
+    {
+      "pointIndex": 31,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005680000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.38,
+        "accuracy": 6.23
+      }
+    },
+    {
+      "pointIndex": 32,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005695000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.18,
+        "accuracy": 5.61
+      }
+    },
+    {
+      "pointIndex": 33,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005710000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.37,
+        "accuracy": 6.37
+      }
+    },
+    {
+      "pointIndex": 34,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005725000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.13,
+        "accuracy": 6.84
+      }
+    },
+    {
+      "pointIndex": 35,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005740000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.18,
+        "accuracy": 7.32
+      }
+    },
+    {
+      "pointIndex": 36,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005755000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.14,
+        "accuracy": 6.04
+      }
+    },
+    {
+      "pointIndex": 37,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005770000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.22,
+        "accuracy": 3.54
+      }
+    },
+    {
+      "pointIndex": 38,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005785000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.55,
+        "accuracy": 5.79
+      }
+    },
+    {
+      "pointIndex": 39,
+      "touristId": "tourist_normal_002",
+      "timestamp": 1793005800000,
+      "scenario": "normal_movement",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "speedMps": 1.31,
+        "accuracy": 5.63
+      }
+    },
+    {
+      "pointIndex": 0,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005215000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "walking",
+        "speedMps": 1.48
+      }
+    },
+    {
+      "pointIndex": 1,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005230000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "walking",
+        "speedMps": 1.41
+      }
+    },
+    {
+      "pointIndex": 2,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005245000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "walking",
+        "speedMps": 1.32
+      }
+    },
+    {
+      "pointIndex": 3,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005260000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "walking",
+        "speedMps": 1.29
+      }
+    },
+    {
+      "pointIndex": 4,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005275000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "walking",
+        "speedMps": 1.43
+      }
+    },
+    {
+      "pointIndex": 5,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005290000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "walking",
+        "speedMps": 1.34
+      }
+    },
+    {
+      "pointIndex": 6,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005305000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "walking",
+        "speedMps": 1.5
+      }
+    },
+    {
+      "pointIndex": 7,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005320000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "walking",
+        "speedMps": 1.26
+      }
+    },
+    {
+      "pointIndex": 8,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005335000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "walking",
+        "speedMps": 1.48
+      }
+    },
+    {
+      "pointIndex": 9,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005350000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "walking",
+        "speedMps": 1.46
+      }
+    },
+    {
+      "pointIndex": 10,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005365000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "walking",
+        "speedMps": 1.25
+      }
+    },
+    {
+      "pointIndex": 11,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005380000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "walking",
+        "speedMps": 1.41
+      }
+    },
+    {
+      "pointIndex": 12,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005395000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "walking",
+        "speedMps": 1.5
+      }
+    },
+    {
+      "pointIndex": 13,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005410000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "walking",
+        "speedMps": 1.2
+      }
+    },
+    {
+      "pointIndex": 14,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005425000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "walking",
+        "speedMps": 1.29
+      }
+    },
+    {
+      "pointIndex": 15,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005440000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 15000,
+        "distFromAnchorM": 2.35
+      }
+    },
+    {
+      "pointIndex": 16,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005455000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 30000,
+        "distFromAnchorM": 0.36
+      }
+    },
+    {
+      "pointIndex": 17,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005470000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 45000,
+        "distFromAnchorM": 1.55
+      }
+    },
+    {
+      "pointIndex": 18,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005485000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 60000,
+        "distFromAnchorM": 1.62
+      }
+    },
+    {
+      "pointIndex": 19,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005500000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 75000,
+        "distFromAnchorM": 2.27
+      }
+    },
+    {
+      "pointIndex": 20,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005515000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 90000,
+        "distFromAnchorM": 1.12
+      }
+    },
+    {
+      "pointIndex": 21,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005530000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 105000,
+        "distFromAnchorM": 1.95
+      }
+    },
+    {
+      "pointIndex": 22,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005545000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 120000,
+        "distFromAnchorM": 1.88
+      }
+    },
+    {
+      "pointIndex": 23,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005560000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 135000,
+        "distFromAnchorM": 0.12
+      }
+    },
+    {
+      "pointIndex": 24,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005575000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 150000,
+        "distFromAnchorM": 2.27
+      }
+    },
+    {
+      "pointIndex": 25,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005590000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 165000,
+        "distFromAnchorM": 1.5
+      }
+    },
+    {
+      "pointIndex": 26,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005605000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 180000,
+        "distFromAnchorM": 0.84
+      }
+    },
+    {
+      "pointIndex": 27,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005620000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 195000,
+        "distFromAnchorM": 2.17
+      }
+    },
+    {
+      "pointIndex": 28,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005635000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 210000,
+        "distFromAnchorM": 0.7
+      }
+    },
+    {
+      "pointIndex": 29,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005650000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 225000,
+        "distFromAnchorM": 2.22
+      }
+    },
+    {
+      "pointIndex": 30,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005665000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 240000,
+        "distFromAnchorM": 0.47
+      }
+    },
+    {
+      "pointIndex": 31,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005680000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 255000,
+        "distFromAnchorM": 2.44
+      }
+    },
+    {
+      "pointIndex": 32,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005695000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 270000,
+        "distFromAnchorM": 0.16
+      }
+    },
+    {
+      "pointIndex": 33,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005710000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 285000,
+        "distFromAnchorM": 2.33
+      }
+    },
+    {
+      "pointIndex": 34,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005725000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 300000,
+        "distFromAnchorM": 2.05
+      }
+    },
+    {
+      "pointIndex": 35,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005740000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 315000,
+        "distFromAnchorM": 0.36
+      }
+    },
+    {
+      "pointIndex": 36,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005755000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 330000,
+        "distFromAnchorM": 0.63
+      }
+    },
+    {
+      "pointIndex": 37,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005770000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 345000,
+        "distFromAnchorM": 0.83
+      }
+    },
+    {
+      "pointIndex": 38,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005785000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 360000,
+        "distFromAnchorM": 0.16
+      }
+    },
+    {
+      "pointIndex": 39,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005800000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 375000,
+        "distFromAnchorM": 2.17
+      }
+    },
+    {
+      "pointIndex": 40,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005815000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 390000,
+        "distFromAnchorM": 1.64
+      }
+    },
+    {
+      "pointIndex": 41,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005830000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 405000,
+        "distFromAnchorM": 1.39
+      }
+    },
+    {
+      "pointIndex": 42,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005845000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 420000,
+        "distFromAnchorM": 2.43
+      }
+    },
+    {
+      "pointIndex": 43,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005860000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 435000,
+        "distFromAnchorM": 0.74
+      }
+    },
+    {
+      "pointIndex": 44,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005875000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 450000,
+        "distFromAnchorM": 1.85
+      }
+    },
+    {
+      "pointIndex": 45,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005890000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 465000,
+        "distFromAnchorM": 1.33
+      }
+    },
+    {
+      "pointIndex": 46,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005905000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 480000,
+        "distFromAnchorM": 0.71
+      }
+    },
+    {
+      "pointIndex": 47,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005920000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 495000,
+        "distFromAnchorM": 2.32
+      }
+    },
+    {
+      "pointIndex": 48,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005935000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 510000,
+        "distFromAnchorM": 1.88
+      }
+    },
+    {
+      "pointIndex": 49,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005950000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 525000,
+        "distFromAnchorM": 0.27
+      }
+    },
+    {
+      "pointIndex": 50,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005965000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 540000,
+        "distFromAnchorM": 0.85
+      }
+    },
+    {
+      "pointIndex": 51,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005980000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 555000,
+        "distFromAnchorM": 0.82
+      }
+    },
+    {
+      "pointIndex": 52,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793005995000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 570000,
+        "distFromAnchorM": 1.07
+      }
+    },
+    {
+      "pointIndex": 53,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006010000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 585000,
+        "distFromAnchorM": 1.11
+      }
+    },
+    {
+      "pointIndex": 54,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006025000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": true,
+      "groundTruthType": "PROLONGED_INACTIVITY",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 600000,
+        "distFromAnchorM": 2.27
+      }
+    },
+    {
+      "pointIndex": 55,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006040000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": true,
+      "groundTruthType": "PROLONGED_INACTIVITY",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 615000,
+        "distFromAnchorM": 1.42
+      }
+    },
+    {
+      "pointIndex": 56,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006055000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": true,
+      "groundTruthType": "PROLONGED_INACTIVITY",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 630000,
+        "distFromAnchorM": 1.13
+      }
+    },
+    {
+      "pointIndex": 57,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006070000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": true,
+      "groundTruthType": "PROLONGED_INACTIVITY",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 645000,
+        "distFromAnchorM": 1.22
+      }
+    },
+    {
+      "pointIndex": 58,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006085000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": true,
+      "groundTruthType": "PROLONGED_INACTIVITY",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 660000,
+        "distFromAnchorM": 1.24
+      }
+    },
+    {
+      "pointIndex": 59,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006100000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": true,
+      "groundTruthType": "PROLONGED_INACTIVITY",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 675000,
+        "distFromAnchorM": 0.51
+      }
+    },
+    {
+      "pointIndex": 60,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006115000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": true,
+      "groundTruthType": "PROLONGED_INACTIVITY",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 690000,
+        "distFromAnchorM": 1.62
+      }
+    },
+    {
+      "pointIndex": 61,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006130000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": true,
+      "groundTruthType": "PROLONGED_INACTIVITY",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 705000,
+        "distFromAnchorM": 1.9
+      }
+    },
+    {
+      "pointIndex": 62,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006145000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": true,
+      "groundTruthType": "PROLONGED_INACTIVITY",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 720000,
+        "distFromAnchorM": 0.58
+      }
+    },
+    {
+      "pointIndex": 63,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006160000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": true,
+      "groundTruthType": "PROLONGED_INACTIVITY",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 735000,
+        "distFromAnchorM": 1.24
+      }
+    },
+    {
+      "pointIndex": 64,
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006175000,
+      "scenario": "prolonged_inactivity",
+      "isAnomaly": true,
+      "groundTruthType": "PROLONGED_INACTIVITY",
+      "details": {
+        "phase": "stationary",
+        "elapsedStationaryMs": 750000,
+        "distFromAnchorM": 1.09
+      }
+    },
+    {
+      "pointIndex": 0,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005215000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.38,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 1,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005230000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.2,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 2,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005245000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.1,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 3,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005260000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.41,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 4,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005275000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.27,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 5,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005290000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.48,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 6,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005305000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.12,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 7,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005320000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.44,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 8,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005335000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.42,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 9,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005350000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.5,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 10,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005365000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.48,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 11,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005380000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.35,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 12,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005395000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.3,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 13,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005410000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.32,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 14,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005425000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": true,
+      "groundTruthType": "ABNORMAL_SPEED",
+      "details": {
+        "calculatedSpeedMps": 48.0,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 15,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005440000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": true,
+      "groundTruthType": "ABNORMAL_SPEED",
+      "details": {
+        "calculatedSpeedMps": 48.0,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 16,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005455000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.2,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 17,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005470000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.36,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 18,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005485000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.31,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 19,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005500000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.21,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 20,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005515000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.21,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 21,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005530000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.23,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 22,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005545000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.16,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 23,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005560000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.38,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 24,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005575000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.13,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 25,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005590000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.32,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 26,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005605000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.18,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 27,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005620000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.46,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 28,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005635000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.38,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 29,
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005650000,
+      "scenario": "abnormal_speed",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "calculatedSpeedMps": 1.41,
+        "thresholdMps": 30.0
+      }
+    },
+    {
+      "pointIndex": 0,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005200000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 31500.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": false
+      }
+    },
+    {
+      "pointIndex": 1,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005215000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 31320.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": false
+      }
+    },
+    {
+      "pointIndex": 2,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005230000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 31140.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": false
+      }
+    },
+    {
+      "pointIndex": 3,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005245000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 30960.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": false
+      }
+    },
+    {
+      "pointIndex": 4,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005260000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 30780.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": false
+      }
+    },
+    {
+      "pointIndex": 5,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005275000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 30600.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": false
+      }
+    },
+    {
+      "pointIndex": 6,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005290000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 30420.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": false
+      }
+    },
+    {
+      "pointIndex": 7,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005305000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 30240.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": false
+      }
+    },
+    {
+      "pointIndex": 8,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005320000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 30060.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": false
+      }
+    },
+    {
+      "pointIndex": 9,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005335000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 29880.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 10,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005350000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 29700.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 11,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005365000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 29520.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 12,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005380000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 29340.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 13,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005395000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 29160.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 14,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005410000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 28980.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 15,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005425000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 28800.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 16,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005440000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 28620.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 17,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005455000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 28440.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 18,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005470000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 28260.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 19,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005485000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 28080.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 20,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005500000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 27900.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 21,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005515000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 27720.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 22,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005530000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 27540.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 23,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005545000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 27360.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 24,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005560000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 27180.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 25,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005575000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 27000.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 26,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005590000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 26820.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 27,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005605000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 26640.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 28,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005620000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 26460.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 29,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005635000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 26280.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 30,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005650000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 26100.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 31,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005665000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 25920.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 32,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005680000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 25740.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 33,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005695000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 25560.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 34,
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005710000,
+      "scenario": "restricted_zone_entry",
+      "isAnomaly": true,
+      "groundTruthType": "RESTRICTED_ZONE_ENTRY",
+      "details": {
+        "zoneName": "Tadoba Tiger Reserve",
+        "riskLevel": "RESTRICTED",
+        "distanceToCenterM": 25380.0,
+        "zoneRadiusM": 30000.0,
+        "isInsideZone": true
+      }
+    },
+    {
+      "pointIndex": 0,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005200000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2005.2,
+        "noiseInjectedM": 0.21,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 1,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005215000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2019.47,
+        "noiseInjectedM": 14.47,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 2,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005230000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 1983.97,
+        "noiseInjectedM": 35.82,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": true,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 3,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005245000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2051.59,
+        "noiseInjectedM": 49.4,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 4,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005260000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2019.54,
+        "noiseInjectedM": 19.96,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 5,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005275000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2002.59,
+        "noiseInjectedM": 2.57,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 6,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005290000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2015.11,
+        "noiseInjectedM": 18.65,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 7,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005305000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2001.6,
+        "noiseInjectedM": 56.75,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 8,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005320000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2036.43,
+        "noiseInjectedM": 38.18,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 9,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005335000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 1981.45,
+        "noiseInjectedM": 82.07,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": true,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 10,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005350000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 1994.99,
+        "noiseInjectedM": 33.98,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": true,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 11,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005365000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2000.88,
+        "noiseInjectedM": 9.14,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 12,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005380000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2029.66,
+        "noiseInjectedM": 48.3,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 13,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005395000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2033.82,
+        "noiseInjectedM": 35.98,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 14,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005410000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 1999.47,
+        "noiseInjectedM": 6.58,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": true,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 15,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005425000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 1973.49,
+        "noiseInjectedM": 31.65,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": true,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 16,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005440000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2038.09,
+        "noiseInjectedM": 38.1,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 17,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005455000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 1965.08,
+        "noiseInjectedM": 52.74,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": true,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 18,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005470000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2002.48,
+        "noiseInjectedM": 9.92,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 19,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005485000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2006.75,
+        "noiseInjectedM": 36.09,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 20,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005500000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 1972.41,
+        "noiseInjectedM": 39.08,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": true,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 21,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005515000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2005.67,
+        "noiseInjectedM": 9.56,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 22,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005530000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2009.3,
+        "noiseInjectedM": 7.24,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 23,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005545000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 1993.13,
+        "noiseInjectedM": 13.03,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": true,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 24,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005560000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2007.53,
+        "noiseInjectedM": 6.12,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 25,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005575000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2007.57,
+        "noiseInjectedM": 5.82,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 26,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005590000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 1985.56,
+        "noiseInjectedM": 38.77,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": true,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 27,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005605000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 2064.94,
+        "noiseInjectedM": 60.81,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": false,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 28,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005620000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 1959.47,
+        "noiseInjectedM": 47.96,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": true,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 29,
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005635000,
+      "scenario": "gps_boundary_noise",
+      "isAnomaly": true,
+      "groundTruthType": "GPS_BOUNDARY_NOISE",
+      "details": {
+        "trueDistToCenterM": 2005.0,
+        "observedDistToCenterM": 1988.36,
+        "noiseInjectedM": 28.62,
+        "boundaryRadiusM": 2000.0,
+        "apparentInside": true,
+        "trueInside": false
+      }
+    },
+    {
+      "pointIndex": 0,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005215000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "pre_blackout"
+      }
+    },
+    {
+      "pointIndex": 1,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005230000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "pre_blackout"
+      }
+    },
+    {
+      "pointIndex": 2,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005245000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "pre_blackout"
+      }
+    },
+    {
+      "pointIndex": 3,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005260000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "pre_blackout"
+      }
+    },
+    {
+      "pointIndex": 4,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005275000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "pre_blackout"
+      }
+    },
+    {
+      "pointIndex": 5,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005290000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "pre_blackout"
+      }
+    },
+    {
+      "pointIndex": 6,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005305000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "pre_blackout"
+      }
+    },
+    {
+      "pointIndex": 7,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005320000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "pre_blackout"
+      }
+    },
+    {
+      "pointIndex": 8,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005335000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "pre_blackout"
+      }
+    },
+    {
+      "pointIndex": 9,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005350000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "pre_blackout"
+      }
+    },
+    {
+      "pointIndex": 10,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005365000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "pre_blackout"
+      }
+    },
+    {
+      "pointIndex": 11,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005380000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "pre_blackout"
+      }
+    },
+    {
+      "pointIndex": 12,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005815000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "post_blackout"
+      }
+    },
+    {
+      "pointIndex": 13,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005830000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "post_blackout"
+      }
+    },
+    {
+      "pointIndex": 14,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005845000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "post_blackout"
+      }
+    },
+    {
+      "pointIndex": 15,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005860000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "post_blackout"
+      }
+    },
+    {
+      "pointIndex": 16,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005875000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "post_blackout"
+      }
+    },
+    {
+      "pointIndex": 17,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005890000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "post_blackout"
+      }
+    },
+    {
+      "pointIndex": 18,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005905000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "post_blackout"
+      }
+    },
+    {
+      "pointIndex": 19,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005920000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "post_blackout"
+      }
+    },
+    {
+      "pointIndex": 20,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005935000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "post_blackout"
+      }
+    },
+    {
+      "pointIndex": 21,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005950000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "post_blackout"
+      }
+    },
+    {
+      "pointIndex": 22,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005965000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "post_blackout"
+      }
+    },
+    {
+      "pointIndex": 23,
+      "touristId": "tourist_missing_gps_001",
+      "timestamp": 1793005980000,
+      "scenario": "missing_gps_observations",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "phase": "post_blackout"
+      }
+    },
+    {
+      "pointIndex": 0,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005215000,
+      "scenario": "sos_event",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": false
+      }
+    },
+    {
+      "pointIndex": 1,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005230000,
+      "scenario": "sos_event",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": false
+      }
+    },
+    {
+      "pointIndex": 2,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005245000,
+      "scenario": "sos_event",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": false
+      }
+    },
+    {
+      "pointIndex": 3,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005260000,
+      "scenario": "sos_event",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": false
+      }
+    },
+    {
+      "pointIndex": 4,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005275000,
+      "scenario": "sos_event",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": false
+      }
+    },
+    {
+      "pointIndex": 5,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005290000,
+      "scenario": "sos_event",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": false
+      }
+    },
+    {
+      "pointIndex": 6,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005305000,
+      "scenario": "sos_event",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": false
+      }
+    },
+    {
+      "pointIndex": 7,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005320000,
+      "scenario": "sos_event",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": false
+      }
+    },
+    {
+      "pointIndex": 8,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005335000,
+      "scenario": "sos_event",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": false
+      }
+    },
+    {
+      "pointIndex": 9,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005350000,
+      "scenario": "sos_event",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": false
+      }
+    },
+    {
+      "pointIndex": 10,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005365000,
+      "scenario": "sos_event",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": false
+      }
+    },
+    {
+      "pointIndex": 11,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005380000,
+      "scenario": "sos_event",
+      "isAnomaly": false,
+      "groundTruthType": "NORMAL",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": false
+      }
+    },
+    {
+      "pointIndex": 12,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005395000,
+      "scenario": "sos_event",
+      "isAnomaly": true,
+      "groundTruthType": "SOS_TRIGGERED",
+      "details": {
+        "isSosTriggerPoint": true,
+        "isSosActive": true
+      }
+    },
+    {
+      "pointIndex": 13,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005410000,
+      "scenario": "sos_event",
+      "isAnomaly": true,
+      "groundTruthType": "SOS_ACTIVE",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": true
+      }
+    },
+    {
+      "pointIndex": 14,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005425000,
+      "scenario": "sos_event",
+      "isAnomaly": true,
+      "groundTruthType": "SOS_ACTIVE",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": true
+      }
+    },
+    {
+      "pointIndex": 15,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005440000,
+      "scenario": "sos_event",
+      "isAnomaly": true,
+      "groundTruthType": "SOS_ACTIVE",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": true
+      }
+    },
+    {
+      "pointIndex": 16,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005455000,
+      "scenario": "sos_event",
+      "isAnomaly": true,
+      "groundTruthType": "SOS_ACTIVE",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": true
+      }
+    },
+    {
+      "pointIndex": 17,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005470000,
+      "scenario": "sos_event",
+      "isAnomaly": true,
+      "groundTruthType": "SOS_ACTIVE",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": true
+      }
+    },
+    {
+      "pointIndex": 18,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005485000,
+      "scenario": "sos_event",
+      "isAnomaly": true,
+      "groundTruthType": "SOS_ACTIVE",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": true
+      }
+    },
+    {
+      "pointIndex": 19,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005500000,
+      "scenario": "sos_event",
+      "isAnomaly": true,
+      "groundTruthType": "SOS_ACTIVE",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": true
+      }
+    },
+    {
+      "pointIndex": 20,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005515000,
+      "scenario": "sos_event",
+      "isAnomaly": true,
+      "groundTruthType": "SOS_ACTIVE",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": true
+      }
+    },
+    {
+      "pointIndex": 21,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005530000,
+      "scenario": "sos_event",
+      "isAnomaly": true,
+      "groundTruthType": "SOS_ACTIVE",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": true
+      }
+    },
+    {
+      "pointIndex": 22,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005545000,
+      "scenario": "sos_event",
+      "isAnomaly": true,
+      "groundTruthType": "SOS_ACTIVE",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": true
+      }
+    },
+    {
+      "pointIndex": 23,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005560000,
+      "scenario": "sos_event",
+      "isAnomaly": true,
+      "groundTruthType": "SOS_ACTIVE",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": true
+      }
+    },
+    {
+      "pointIndex": 24,
+      "touristId": "tourist_sos_001",
+      "timestamp": 1793005575000,
+      "scenario": "sos_event",
+      "isAnomaly": true,
+      "groundTruthType": "SOS_ACTIVE",
+      "details": {
+        "isSosTriggerPoint": false,
+        "isSosActive": true
+      }
+    }
+  ]
+}

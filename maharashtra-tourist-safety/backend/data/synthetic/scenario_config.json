@@ -1,0 +1,66 @@
+{
+  "randomSeed": 42,
+  "generatedAtUtc": "2026-10-26T14:16:07.340334+00:00",
+  "baseTimeMs": 1793005200000,
+  "touristCount": 8,
+  "touristIds": [
+    "tourist_boundary_noise_001",
+    "tourist_inactivity_001",
+    "tourist_missing_gps_001",
+    "tourist_normal_001",
+    "tourist_normal_002",
+    "tourist_restricted_001",
+    "tourist_sos_001",
+    "tourist_speed_001"
+  ],
+  "scenarios": [
+    "normal_movement",
+    "prolonged_inactivity",
+    "abnormal_speed",
+    "restricted_zone_entry",
+    "gps_boundary_noise",
+    "missing_gps_observations",
+    "sos_event"
+  ],
+  "detectorThresholds": {
+    "stationary_dist_meters": 10.0,
+    "stationary_window_ms": 600000,
+    "abnormal_speed_mps": 30.0,
+    "gps_loss_timeout_ms": 300000,
+    "geofence_cooldown_seconds": 300
+  },
+  "zonesConfigured": {
+    "TADOBA_RESERVE": {
+      "zoneId": "zone-tadoba-restricted",
+      "name": "Tadoba Tiger Reserve",
+      "riskLevel": "RESTRICTED",
+      "centerLat": 20.228,
+      "centerLng": 79.395,
+      "radiusMeters": 30000.0
+    },
+    "DHARAVI": {
+      "zoneId": "zone-dharavi-high",
+      "name": "Dharavi",
+      "riskLevel": "HIGH",
+      "centerLat": 19.039,
+      "centerLng": 72.853,
+      "radiusMeters": 2000.0
+    },
+    "PUNE_CORE": {
+      "zoneId": "zone-pune-urban",
+      "name": "Pune Urban Core",
+      "riskLevel": "MEDIUM",
+      "centerLat": 18.5204,
+      "centerLng": 73.8567,
+      "radiusMeters": 12000.0
+    },
+    "MUMBAI_CORE": {
+      "zoneId": "zone-mumbai-urban",
+      "name": "Mumbai Urban Core",
+      "riskLevel": "MEDIUM",
+      "centerLat": 19.076,
+      "centerLng": 72.8777,
+      "radiusMeters": 15000.0
+    }
+  }
+}

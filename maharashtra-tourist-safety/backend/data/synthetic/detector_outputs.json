@@ -1,0 +1,443 @@
+{
+  "detectorName": "BaselineMaharashtraRuleSet",
+  "totalAlertsFired": 50,
+  "alerts": [
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "HIGH",
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005230000,
+      "zoneName": "Dharavi",
+      "distanceToCenterM": 1983.95
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "HIGH",
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005335000,
+      "zoneName": "Dharavi",
+      "distanceToCenterM": 1981.48
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005335000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 29879.97
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "HIGH",
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005350000,
+      "zoneName": "Dharavi",
+      "distanceToCenterM": 1994.97
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005350000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 29700.05
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005365000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 29520.03
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005380000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 29340.0
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005395000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 29159.98
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "HIGH",
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005410000,
+      "zoneName": "Dharavi",
+      "distanceToCenterM": 1999.5
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005410000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 28979.96
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "HIGH",
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005425000,
+      "zoneName": "Dharavi",
+      "distanceToCenterM": 1973.53
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005425000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 28800.04
+    },
+    {
+      "detector": "ANOMALY_WORKER",
+      "alertType": "ABNORMAL_SPEED",
+      "riskLevel": "MEDIUM",
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005425000,
+      "calculatedSpeedMps": 48.0
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005440000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 28620.02
+    },
+    {
+      "detector": "ANOMALY_WORKER",
+      "alertType": "ABNORMAL_SPEED",
+      "riskLevel": "MEDIUM",
+      "touristId": "tourist_speed_001",
+      "timestamp": 1793005440000,
+      "calculatedSpeedMps": 48.0
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "HIGH",
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005455000,
+      "zoneName": "Dharavi",
+      "distanceToCenterM": 1965.08
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005455000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 28439.99
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005470000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 28259.97
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005485000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 28080.05
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "HIGH",
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005500000,
+      "zoneName": "Dharavi",
+      "distanceToCenterM": 1972.37
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005500000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 27900.03
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005515000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 27720.01
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005530000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 27539.98
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "HIGH",
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005545000,
+      "zoneName": "Dharavi",
+      "distanceToCenterM": 1993.12
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005545000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 27359.96
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005560000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 27180.04
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005575000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 27000.02
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "HIGH",
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005590000,
+      "zoneName": "Dharavi",
+      "distanceToCenterM": 1985.57
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005590000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 26819.99
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005605000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 26639.97
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "HIGH",
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005620000,
+      "zoneName": "Dharavi",
+      "distanceToCenterM": 1959.42
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005620000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 26459.94
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "HIGH",
+      "touristId": "tourist_boundary_noise_001",
+      "timestamp": 1793005635000,
+      "zoneName": "Dharavi",
+      "distanceToCenterM": 1988.35
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005635000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 26280.03
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005650000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 26100.01
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005665000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 25919.98
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005680000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 25739.96
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005695000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 25560.04
+    },
+    {
+      "detector": "GEOFENCE_ENGINE",
+      "alertType": "ZONE_ENTRY",
+      "riskLevel": "RESTRICTED",
+      "touristId": "tourist_restricted_001",
+      "timestamp": 1793005710000,
+      "zoneName": "Tadoba Tiger Reserve",
+      "distanceToCenterM": 25380.02
+    },
+    {
+      "detector": "ANOMALY_WORKER",
+      "alertType": "STATIONARY",
+      "riskLevel": "LOW",
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006025000,
+      "maxDispMeters": 4.59
+    },
+    {
+      "detector": "ANOMALY_WORKER",
+      "alertType": "STATIONARY",
+      "riskLevel": "LOW",
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006040000,
+      "maxDispMeters": 3.74
+    },
+    {
+      "detector": "ANOMALY_WORKER",
+      "alertType": "STATIONARY",
+      "riskLevel": "LOW",
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006055000,
+      "maxDispMeters": 3.39
+    },
+    {
+      "detector": "ANOMALY_WORKER",
+      "alertType": "STATIONARY",
+      "riskLevel": "LOW",
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006070000,
+      "maxDispMeters": 3.39
+    },
+    {
+      "detector": "ANOMALY_WORKER",
+      "alertType": "STATIONARY",
+      "riskLevel": "LOW",
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006085000,
+      "maxDispMeters": 3.46
+    },
+    {
+      "detector": "ANOMALY_WORKER",
+      "alertType": "STATIONARY",
+      "riskLevel": "LOW",
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006100000,
+      "maxDispMeters": 2.83
+    },
+    {
+      "detector": "ANOMALY_WORKER",
+      "alertType": "STATIONARY",
+      "riskLevel": "LOW",
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006115000,
+      "maxDispMeters": 4.1
+    },
+    {
+      "detector": "ANOMALY_WORKER",
+      "alertType": "STATIONARY",
+      "riskLevel": "LOW",
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006130000,
+      "maxDispMeters": 4.24
+    },
+    {
+      "detector": "ANOMALY_WORKER",
+      "alertType": "STATIONARY",
+      "riskLevel": "LOW",
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006145000,
+      "maxDispMeters": 2.88
+    },
+    {
+      "detector": "ANOMALY_WORKER",
+      "alertType": "STATIONARY",
+      "riskLevel": "LOW",
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006160000,
+      "maxDispMeters": 3.38
+    },
+    {
+      "detector": "ANOMALY_WORKER",
+      "alertType": "STATIONARY",
+      "riskLevel": "LOW",
+      "touristId": "tourist_inactivity_001",
+      "timestamp": 1793006175000,
+      "maxDispMeters": 3.45
+    }
+  ]
+}

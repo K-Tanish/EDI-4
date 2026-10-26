@@ -1,0 +1,2892 @@
+[
+  {
+    "pointIndex": 0,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.057033,
+    "longitude": 72.853,
+    "timestamp": 1793005200000,
+    "accuracy": 10.6,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 0,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.511286,
+    "longitude": 79.395,
+    "timestamp": 1793005200000,
+    "accuracy": 3.52,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 1,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.057161,
+    "longitude": 72.853166,
+    "timestamp": 1793005215000,
+    "accuracy": 22.97,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 0,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.524802,
+    "longitude": 73.85997,
+    "timestamp": 1793005215000,
+    "accuracy": 3.61,
+    "speedMps": 1.48,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 0,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.520524,
+    "longitude": 73.856831,
+    "timestamp": 1793005215000,
+    "accuracy": 3.98,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 0,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.520302,
+    "longitude": 73.85658,
+    "timestamp": 1793005215000,
+    "accuracy": 6.31,
+    "speedMps": 1.11,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 0,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.075805,
+    "longitude": 72.877649,
+    "timestamp": 1793005215000,
+    "accuracy": 4.46,
+    "speedMps": 1.49,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 1,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.509668,
+    "longitude": 79.395,
+    "timestamp": 1793005215000,
+    "accuracy": 4.73,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 0,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.990048,
+    "longitude": 73.311908,
+    "timestamp": 1793005215000,
+    "accuracy": 4.95,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 0,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.877897,
+    "timestamp": 1793005215000,
+    "accuracy": 4.48,
+    "speedMps": 1.38,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 2,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056842,
+    "longitude": 72.853055,
+    "timestamp": 1793005230000,
+    "accuracy": 48.36,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 1,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.524613,
+    "longitude": 73.859941,
+    "timestamp": 1793005230000,
+    "accuracy": 3.72,
+    "speedMps": 1.41,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 1,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.520648,
+    "longitude": 73.856962,
+    "timestamp": 1793005230000,
+    "accuracy": 4.59,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 1,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.520191,
+    "longitude": 73.856413,
+    "timestamp": 1793005230000,
+    "accuracy": 7.01,
+    "speedMps": 1.44,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 1,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.07566,
+    "longitude": 72.877611,
+    "timestamp": 1793005230000,
+    "accuracy": 7.18,
+    "speedMps": 1.11,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 2,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.508049,
+    "longitude": 79.395,
+    "timestamp": 1793005230000,
+    "accuracy": 6.14,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 1,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.989896,
+    "longitude": 73.311817,
+    "timestamp": 1793005230000,
+    "accuracy": 4.05,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 1,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.878068,
+    "timestamp": 1793005230000,
+    "accuracy": 4.97,
+    "speedMps": 1.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 3,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.057447,
+    "longitude": 72.853353,
+    "timestamp": 1793005245000,
+    "accuracy": 56.39,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 2,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.524437,
+    "longitude": 73.859914,
+    "timestamp": 1793005245000,
+    "accuracy": 5.02,
+    "speedMps": 1.32,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 2,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.520772,
+    "longitude": 73.857092,
+    "timestamp": 1793005245000,
+    "accuracy": 3.19,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 2,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.520098,
+    "longitude": 73.856282,
+    "timestamp": 1793005245000,
+    "accuracy": 3.98,
+    "speedMps": 1.14,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 2,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.075461,
+    "longitude": 72.877546,
+    "timestamp": 1793005245000,
+    "accuracy": 3.26,
+    "speedMps": 1.54,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 3,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.50643,
+    "longitude": 79.395,
+    "timestamp": 1793005245000,
+    "accuracy": 6.49,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 2,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.989744,
+    "longitude": 73.311725,
+    "timestamp": 1793005245000,
+    "accuracy": 3.57,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 2,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.878225,
+    "timestamp": 1793005245000,
+    "accuracy": 5.25,
+    "speedMps": 1.1,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 4,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.057146,
+    "longitude": 72.853801,
+    "timestamp": 1793005260000,
+    "accuracy": 31.66,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 3,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.524265,
+    "longitude": 73.859888,
+    "timestamp": 1793005260000,
+    "accuracy": 3.95,
+    "speedMps": 1.29,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 3,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.520896,
+    "longitude": 73.857223,
+    "timestamp": 1793005260000,
+    "accuracy": 3.44,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 3,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.519991,
+    "longitude": 73.856126,
+    "timestamp": 1793005260000,
+    "accuracy": 3.12,
+    "speedMps": 1.35,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 3,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.075258,
+    "longitude": 72.877503,
+    "timestamp": 1793005260000,
+    "accuracy": 7.26,
+    "speedMps": 1.54,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 4,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.504811,
+    "longitude": 79.395,
+    "timestamp": 1793005260000,
+    "accuracy": 6.84,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 3,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.989593,
+    "longitude": 73.311633,
+    "timestamp": 1793005260000,
+    "accuracy": 3.2,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 3,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.878426,
+    "timestamp": 1793005260000,
+    "accuracy": 3.32,
+    "speedMps": 1.41,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 5,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056993,
+    "longitude": 72.853823,
+    "timestamp": 1793005275000,
+    "accuracy": 9.75,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 4,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.524075,
+    "longitude": 73.859859,
+    "timestamp": 1793005275000,
+    "accuracy": 3.22,
+    "speedMps": 1.43,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 4,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.52102,
+    "longitude": 73.857354,
+    "timestamp": 1793005275000,
+    "accuracy": 4.38,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 4,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.519883,
+    "longitude": 73.855999,
+    "timestamp": 1793005275000,
+    "accuracy": 3.99,
+    "speedMps": 1.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 4,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.075105,
+    "longitude": 72.87748,
+    "timestamp": 1793005275000,
+    "accuracy": 6.42,
+    "speedMps": 1.14,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 5,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.503192,
+    "longitude": 79.395,
+    "timestamp": 1793005275000,
+    "accuracy": 4.97,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 4,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.989441,
+    "longitude": 73.311542,
+    "timestamp": 1793005275000,
+    "accuracy": 3.39,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 4,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.878607,
+    "timestamp": 1793005275000,
+    "accuracy": 3.53,
+    "speedMps": 1.27,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 6,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.05709,
+    "longitude": 72.854153,
+    "timestamp": 1793005290000,
+    "accuracy": 29.72,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 5,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.523896,
+    "longitude": 73.859832,
+    "timestamp": 1793005290000,
+    "accuracy": 6.0,
+    "speedMps": 1.34,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 5,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.521144,
+    "longitude": 73.857485,
+    "timestamp": 1793005290000,
+    "accuracy": 3.61,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 5,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.519739,
+    "longitude": 73.855871,
+    "timestamp": 1793005290000,
+    "accuracy": 6.64,
+    "speedMps": 1.39,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 5,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.074907,
+    "longitude": 72.877448,
+    "timestamp": 1793005290000,
+    "accuracy": 3.58,
+    "speedMps": 1.48,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 6,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.501574,
+    "longitude": 79.395,
+    "timestamp": 1793005290000,
+    "accuracy": 6.12,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 5,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.989289,
+    "longitude": 73.31145,
+    "timestamp": 1793005290000,
+    "accuracy": 3.45,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 5,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.878819,
+    "timestamp": 1793005290000,
+    "accuracy": 4.55,
+    "speedMps": 1.48,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 7,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056991,
+    "longitude": 72.853625,
+    "timestamp": 1793005305000,
+    "accuracy": 62.89,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 6,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.523696,
+    "longitude": 73.859802,
+    "timestamp": 1793005305000,
+    "accuracy": 3.22,
+    "speedMps": 1.5,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 6,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.521268,
+    "longitude": 73.857615,
+    "timestamp": 1793005305000,
+    "accuracy": 4.16,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 6,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.519633,
+    "longitude": 73.855762,
+    "timestamp": 1793005305000,
+    "accuracy": 4.53,
+    "speedMps": 1.1,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 6,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.074727,
+    "longitude": 72.87744,
+    "timestamp": 1793005305000,
+    "accuracy": 6.93,
+    "speedMps": 1.34,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 7,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.499955,
+    "longitude": 79.395,
+    "timestamp": 1793005305000,
+    "accuracy": 5.41,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 6,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.989137,
+    "longitude": 73.311358,
+    "timestamp": 1793005305000,
+    "accuracy": 3.36,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 6,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.878979,
+    "timestamp": 1793005305000,
+    "accuracy": 3.75,
+    "speedMps": 1.12,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 8,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.057255,
+    "longitude": 72.854559,
+    "timestamp": 1793005320000,
+    "accuracy": 43.44,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 7,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.523527,
+    "longitude": 73.859776,
+    "timestamp": 1793005320000,
+    "accuracy": 3.8,
+    "speedMps": 1.26,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 7,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.521392,
+    "longitude": 73.857746,
+    "timestamp": 1793005320000,
+    "accuracy": 3.95,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 7,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.519499,
+    "longitude": 73.855671,
+    "timestamp": 1793005320000,
+    "accuracy": 7.31,
+    "speedMps": 1.18,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 7,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.07455,
+    "longitude": 72.877438,
+    "timestamp": 1793005320000,
+    "accuracy": 3.95,
+    "speedMps": 1.31,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 8,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.498336,
+    "longitude": 79.395,
+    "timestamp": 1793005320000,
+    "accuracy": 5.61,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 7,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988985,
+    "longitude": 73.311267,
+    "timestamp": 1793005320000,
+    "accuracy": 3.03,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 7,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.879184,
+    "timestamp": 1793005320000,
+    "accuracy": 4.37,
+    "speedMps": 1.44,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 9,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056696,
+    "longitude": 72.855219,
+    "timestamp": 1793005335000,
+    "accuracy": 93.85,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 8,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.52333,
+    "longitude": 73.859746,
+    "timestamp": 1793005335000,
+    "accuracy": 5.64,
+    "speedMps": 1.48,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 8,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.521516,
+    "longitude": 73.857877,
+    "timestamp": 1793005335000,
+    "accuracy": 4.06,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 8,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.51936,
+    "longitude": 73.855566,
+    "timestamp": 1793005335000,
+    "accuracy": 6.81,
+    "speedMps": 1.27,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 8,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.074365,
+    "longitude": 72.877438,
+    "timestamp": 1793005335000,
+    "accuracy": 4.4,
+    "speedMps": 1.37,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 9,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.496717,
+    "longitude": 79.395,
+    "timestamp": 1793005335000,
+    "accuracy": 4.27,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 8,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988833,
+    "longitude": 73.311175,
+    "timestamp": 1793005335000,
+    "accuracy": 4.07,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 8,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.879387,
+    "timestamp": 1793005335000,
+    "accuracy": 5.0,
+    "speedMps": 1.42,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 10,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056896,
+    "longitude": 72.854347,
+    "timestamp": 1793005350000,
+    "accuracy": 39.74,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 9,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.523134,
+    "longitude": 73.859716,
+    "timestamp": 1793005350000,
+    "accuracy": 4.11,
+    "speedMps": 1.46,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 9,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.52164,
+    "longitude": 73.858008,
+    "timestamp": 1793005350000,
+    "accuracy": 3.85,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 9,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.519211,
+    "longitude": 73.855444,
+    "timestamp": 1793005350000,
+    "accuracy": 6.63,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 9,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.074151,
+    "longitude": 72.87746,
+    "timestamp": 1793005350000,
+    "accuracy": 5.92,
+    "speedMps": 1.6,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 10,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.495099,
+    "longitude": 79.395,
+    "timestamp": 1793005350000,
+    "accuracy": 4.27,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 9,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988681,
+    "longitude": 73.311083,
+    "timestamp": 1793005350000,
+    "accuracy": 3.55,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 9,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.879601,
+    "timestamp": 1793005350000,
+    "accuracy": 4.79,
+    "speedMps": 1.5,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 11,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056918,
+    "longitude": 72.854747,
+    "timestamp": 1793005365000,
+    "accuracy": 20.41,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 10,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522968,
+    "longitude": 73.859691,
+    "timestamp": 1793005365000,
+    "accuracy": 5.5,
+    "speedMps": 1.25,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 10,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.521764,
+    "longitude": 73.858139,
+    "timestamp": 1793005365000,
+    "accuracy": 4.49,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 10,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.519022,
+    "longitude": 73.855384,
+    "timestamp": 1793005365000,
+    "accuracy": 4.7,
+    "speedMps": 1.46,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 10,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.073975,
+    "longitude": 72.877491,
+    "timestamp": 1793005365000,
+    "accuracy": 4.01,
+    "speedMps": 1.32,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 11,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.49348,
+    "longitude": 79.395,
+    "timestamp": 1793005365000,
+    "accuracy": 5.03,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 10,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988529,
+    "longitude": 73.310991,
+    "timestamp": 1793005365000,
+    "accuracy": 4.95,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 10,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.879812,
+    "timestamp": 1793005365000,
+    "accuracy": 5.67,
+    "speedMps": 1.48,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 12,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.057189,
+    "longitude": 72.854623,
+    "timestamp": 1793005380000,
+    "accuracy": 59.3,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 11,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522779,
+    "longitude": 73.859662,
+    "timestamp": 1793005380000,
+    "accuracy": 4.84,
+    "speedMps": 1.41,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 11,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.521888,
+    "longitude": 73.858269,
+    "timestamp": 1793005380000,
+    "accuracy": 3.66,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 11,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.51884,
+    "longitude": 73.855343,
+    "timestamp": 1793005380000,
+    "accuracy": 6.73,
+    "speedMps": 1.38,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 11,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.073807,
+    "longitude": 72.877522,
+    "timestamp": 1793005380000,
+    "accuracy": 5.65,
+    "speedMps": 1.27,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 12,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.491861,
+    "longitude": 79.395,
+    "timestamp": 1793005380000,
+    "accuracy": 3.6,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 11,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988378,
+    "longitude": 73.3109,
+    "timestamp": 1793005380000,
+    "accuracy": 4.11,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 11,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.880004,
+    "timestamp": 1793005380000,
+    "accuracy": 5.16,
+    "speedMps": 1.35,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 13,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.05715,
+    "longitude": 72.855396,
+    "timestamp": 1793005395000,
+    "accuracy": 50.82,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 12,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.52258,
+    "longitude": 73.859632,
+    "timestamp": 1793005395000,
+    "accuracy": 4.96,
+    "speedMps": 1.5,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 12,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.51866,
+    "longitude": 73.855279,
+    "timestamp": 1793005395000,
+    "accuracy": 6.17,
+    "speedMps": 1.41,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 12,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.073645,
+    "longitude": 72.87755,
+    "timestamp": 1793005395000,
+    "accuracy": 5.84,
+    "speedMps": 1.22,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 13,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.490242,
+    "longitude": 79.395,
+    "timestamp": 1793005395000,
+    "accuracy": 4.68,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 12,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988354,
+    "longitude": 73.310886,
+    "timestamp": 1793005395000,
+    "accuracy": 4.39,
+    "speedMps": 0.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 12,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.88019,
+    "timestamp": 1793005395000,
+    "accuracy": 5.49,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 14,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056844,
+    "longitude": 72.855352,
+    "timestamp": 1793005410000,
+    "accuracy": 15.29,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 13,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522419,
+    "longitude": 73.859608,
+    "timestamp": 1793005410000,
+    "accuracy": 5.45,
+    "speedMps": 1.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 13,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.518511,
+    "longitude": 73.85525,
+    "timestamp": 1793005410000,
+    "accuracy": 4.03,
+    "speedMps": 1.12,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 13,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.073482,
+    "longitude": 72.877569,
+    "timestamp": 1793005410000,
+    "accuracy": 7.07,
+    "speedMps": 1.21,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 14,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.488623,
+    "longitude": 79.395,
+    "timestamp": 1793005410000,
+    "accuracy": 5.88,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 13,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988331,
+    "longitude": 73.310872,
+    "timestamp": 1793005410000,
+    "accuracy": 3.25,
+    "speedMps": 0.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 13,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.880378,
+    "timestamp": 1793005410000,
+    "accuracy": 5.69,
+    "speedMps": 1.32,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 15,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056593,
+    "longitude": 72.855479,
+    "timestamp": 1793005425000,
+    "accuracy": 40.06,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 14,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522247,
+    "longitude": 73.859581,
+    "timestamp": 1793005425000,
+    "accuracy": 4.99,
+    "speedMps": 1.29,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 14,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.518349,
+    "longitude": 73.855202,
+    "timestamp": 1793005425000,
+    "accuracy": 3.45,
+    "speedMps": 1.24,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 14,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.073276,
+    "longitude": 72.877573,
+    "timestamp": 1793005425000,
+    "accuracy": 6.01,
+    "speedMps": 1.53,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 15,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.487005,
+    "longitude": 79.395,
+    "timestamp": 1793005425000,
+    "accuracy": 4.92,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 14,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988307,
+    "longitude": 73.310857,
+    "timestamp": 1793005425000,
+    "accuracy": 4.74,
+    "speedMps": 0.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 14,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.887229,
+    "timestamp": 1793005425000,
+    "accuracy": 5.23,
+    "speedMps": 48.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 16,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.057126,
+    "longitude": 72.855878,
+    "timestamp": 1793005440000,
+    "accuracy": 52.71,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 15,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522261,
+    "longitude": 73.859598,
+    "timestamp": 1793005440000,
+    "accuracy": 4.46,
+    "speedMps": 0.16,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 15,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.518191,
+    "longitude": 73.855145,
+    "timestamp": 1793005440000,
+    "accuracy": 5.86,
+    "speedMps": 1.24,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 15,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.073113,
+    "longitude": 72.877568,
+    "timestamp": 1793005440000,
+    "accuracy": 3.6,
+    "speedMps": 1.21,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 16,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.485386,
+    "longitude": 79.395,
+    "timestamp": 1793005440000,
+    "accuracy": 4.08,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 15,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988284,
+    "longitude": 73.310843,
+    "timestamp": 1793005440000,
+    "accuracy": 3.98,
+    "speedMps": 0.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 15,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.894081,
+    "timestamp": 1793005440000,
+    "accuracy": 4.42,
+    "speedMps": 48.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 17,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056521,
+    "longitude": 72.855442,
+    "timestamp": 1793005455000,
+    "accuracy": 66.03,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 16,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522244,
+    "longitude": 73.85958,
+    "timestamp": 1793005455000,
+    "accuracy": 5.09,
+    "speedMps": 0.02,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 16,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.518024,
+    "longitude": 73.855099,
+    "timestamp": 1793005455000,
+    "accuracy": 4.2,
+    "speedMps": 1.28,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 16,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.072903,
+    "longitude": 72.877594,
+    "timestamp": 1793005455000,
+    "accuracy": 6.53,
+    "speedMps": 1.57,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 17,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.483767,
+    "longitude": 79.395,
+    "timestamp": 1793005455000,
+    "accuracy": 5.14,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 16,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988261,
+    "longitude": 73.310829,
+    "timestamp": 1793005455000,
+    "accuracy": 4.75,
+    "speedMps": 0.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 16,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.894252,
+    "timestamp": 1793005455000,
+    "accuracy": 3.74,
+    "speedMps": 1.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 18,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.0568,
+    "longitude": 72.85589,
+    "timestamp": 1793005470000,
+    "accuracy": 24.57,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 17,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522244,
+    "longitude": 73.859567,
+    "timestamp": 1793005470000,
+    "accuracy": 4.81,
+    "speedMps": 0.1,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 17,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.517823,
+    "longitude": 73.855027,
+    "timestamp": 1793005470000,
+    "accuracy": 5.92,
+    "speedMps": 1.57,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 17,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.072703,
+    "longitude": 72.877633,
+    "timestamp": 1793005470000,
+    "accuracy": 3.86,
+    "speedMps": 1.5,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 18,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.482148,
+    "longitude": 79.395,
+    "timestamp": 1793005470000,
+    "accuracy": 3.95,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 17,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988237,
+    "longitude": 73.310815,
+    "timestamp": 1793005470000,
+    "accuracy": 4.15,
+    "speedMps": 0.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 17,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.894446,
+    "timestamp": 1793005470000,
+    "accuracy": 5.3,
+    "speedMps": 1.36,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 19,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056743,
+    "longitude": 72.856489,
+    "timestamp": 1793005485000,
+    "accuracy": 49.17,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 18,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522246,
+    "longitude": 73.859597,
+    "timestamp": 1793005485000,
+    "accuracy": 5.95,
+    "speedMps": 0.11,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 18,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.517652,
+    "longitude": 73.854943,
+    "timestamp": 1793005485000,
+    "accuracy": 3.74,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 18,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.072556,
+    "longitude": 72.877684,
+    "timestamp": 1793005485000,
+    "accuracy": 5.1,
+    "speedMps": 1.15,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 19,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.48053,
+    "longitude": 79.395,
+    "timestamp": 1793005485000,
+    "accuracy": 5.68,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 18,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988214,
+    "longitude": 73.310801,
+    "timestamp": 1793005485000,
+    "accuracy": 3.94,
+    "speedMps": 0.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 18,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.894633,
+    "timestamp": 1793005485000,
+    "accuracy": 4.88,
+    "speedMps": 1.31,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 20,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056434,
+    "longitude": 72.856459,
+    "timestamp": 1793005500000,
+    "accuracy": 51.39,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 19,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522258,
+    "longitude": 73.859564,
+    "timestamp": 1793005500000,
+    "accuracy": 4.37,
+    "speedMps": 0.15,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 19,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.517511,
+    "longitude": 73.854834,
+    "timestamp": 1793005500000,
+    "accuracy": 7.45,
+    "speedMps": 1.29,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 19,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.072365,
+    "longitude": 72.877736,
+    "timestamp": 1793005500000,
+    "accuracy": 6.03,
+    "speedMps": 1.46,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 20,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.478911,
+    "longitude": 79.395,
+    "timestamp": 1793005500000,
+    "accuracy": 3.59,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 19,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988191,
+    "longitude": 73.310787,
+    "timestamp": 1793005500000,
+    "accuracy": 3.88,
+    "speedMps": 0.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 19,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.894805,
+    "timestamp": 1793005500000,
+    "accuracy": 3.23,
+    "speedMps": 1.21,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 21,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.05672,
+    "longitude": 72.856567,
+    "timestamp": 1793005515000,
+    "accuracy": 23.07,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 20,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522245,
+    "longitude": 73.859592,
+    "timestamp": 1793005515000,
+    "accuracy": 4.01,
+    "speedMps": 0.07,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 20,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.517338,
+    "longitude": 73.854749,
+    "timestamp": 1793005515000,
+    "accuracy": 6.79,
+    "speedMps": 1.42,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 20,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.072152,
+    "longitude": 72.877768,
+    "timestamp": 1793005515000,
+    "accuracy": 4.53,
+    "speedMps": 1.59,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 21,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.477292,
+    "longitude": 79.395,
+    "timestamp": 1793005515000,
+    "accuracy": 4.88,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 20,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988167,
+    "longitude": 73.310773,
+    "timestamp": 1793005515000,
+    "accuracy": 3.37,
+    "speedMps": 0.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 20,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.894979,
+    "timestamp": 1793005515000,
+    "accuracy": 3.82,
+    "speedMps": 1.21,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 22,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056748,
+    "longitude": 72.856593,
+    "timestamp": 1793005530000,
+    "accuracy": 14.68,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 21,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522235,
+    "longitude": 73.859567,
+    "timestamp": 1793005530000,
+    "accuracy": 5.05,
+    "speedMps": 0.13,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 21,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.51715,
+    "longitude": 73.854674,
+    "timestamp": 1793005530000,
+    "accuracy": 4.03,
+    "speedMps": 1.49,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 21,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.071946,
+    "longitude": 72.87778,
+    "timestamp": 1793005530000,
+    "accuracy": 4.12,
+    "speedMps": 1.53,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 22,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.475673,
+    "longitude": 79.395,
+    "timestamp": 1793005530000,
+    "accuracy": 5.48,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 21,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988144,
+    "longitude": 73.310759,
+    "timestamp": 1793005530000,
+    "accuracy": 3.1,
+    "speedMps": 0.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 21,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.895154,
+    "timestamp": 1793005530000,
+    "accuracy": 4.62,
+    "speedMps": 1.23,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 23,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056555,
+    "longitude": 72.856831,
+    "timestamp": 1793005545000,
+    "accuracy": 24.13,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 22,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522231,
+    "longitude": 73.859576,
+    "timestamp": 1793005545000,
+    "accuracy": 5.71,
+    "speedMps": 0.13,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 22,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.517007,
+    "longitude": 73.854625,
+    "timestamp": 1793005545000,
+    "accuracy": 3.95,
+    "speedMps": 1.12,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 22,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.071788,
+    "longitude": 72.877814,
+    "timestamp": 1793005545000,
+    "accuracy": 4.25,
+    "speedMps": 1.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 23,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.474054,
+    "longitude": 79.395,
+    "timestamp": 1793005545000,
+    "accuracy": 3.59,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 22,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988121,
+    "longitude": 73.310745,
+    "timestamp": 1793005545000,
+    "accuracy": 4.88,
+    "speedMps": 0.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 22,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.895319,
+    "timestamp": 1793005545000,
+    "accuracy": 3.69,
+    "speedMps": 1.16,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 24,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.05667,
+    "longitude": 72.856919,
+    "timestamp": 1793005560000,
+    "accuracy": 12.94,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 23,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522248,
+    "longitude": 73.859582,
+    "timestamp": 1793005560000,
+    "accuracy": 7.53,
+    "speedMps": 0.01,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 23,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.516813,
+    "longitude": 73.854534,
+    "timestamp": 1793005560000,
+    "accuracy": 6.94,
+    "speedMps": 1.57,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 23,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.071625,
+    "longitude": 72.87784,
+    "timestamp": 1793005560000,
+    "accuracy": 7.15,
+    "speedMps": 1.22,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 24,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.472436,
+    "longitude": 79.395,
+    "timestamp": 1793005560000,
+    "accuracy": 5.75,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 23,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988097,
+    "longitude": 73.310731,
+    "timestamp": 1793005560000,
+    "accuracy": 3.96,
+    "speedMps": 0.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 23,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.895515,
+    "timestamp": 1793005560000,
+    "accuracy": 5.12,
+    "speedMps": 1.38,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 25,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056616,
+    "longitude": 72.857183,
+    "timestamp": 1793005575000,
+    "accuracy": 18.8,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 24,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522227,
+    "longitude": 73.859575,
+    "timestamp": 1793005575000,
+    "accuracy": 7.34,
+    "speedMps": 0.15,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 24,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.516653,
+    "longitude": 73.854474,
+    "timestamp": 1793005575000,
+    "accuracy": 7.12,
+    "speedMps": 1.26,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 24,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.071446,
+    "longitude": 72.877846,
+    "timestamp": 1793005575000,
+    "accuracy": 3.23,
+    "speedMps": 1.32,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 25,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.470817,
+    "longitude": 79.395,
+    "timestamp": 1793005575000,
+    "accuracy": 3.97,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 24,
+    "touristId": "tourist_sos_001",
+    "latitude": 16.988074,
+    "longitude": 73.310716,
+    "timestamp": 1793005575000,
+    "accuracy": 4.64,
+    "speedMps": 0.2,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 24,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.895676,
+    "timestamp": 1793005575000,
+    "accuracy": 4.22,
+    "speedMps": 1.13,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 26,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056464,
+    "longitude": 72.85694,
+    "timestamp": 1793005590000,
+    "accuracy": 46.54,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 25,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522255,
+    "longitude": 73.859593,
+    "timestamp": 1793005590000,
+    "accuracy": 4.51,
+    "speedMps": 0.1,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 25,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.516478,
+    "longitude": 73.854432,
+    "timestamp": 1793005590000,
+    "accuracy": 4.19,
+    "speedMps": 1.33,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 25,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.071234,
+    "longitude": 72.877885,
+    "timestamp": 1793005590000,
+    "accuracy": 6.76,
+    "speedMps": 1.6,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 26,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.469198,
+    "longitude": 79.395,
+    "timestamp": 1793005590000,
+    "accuracy": 5.12,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 25,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.895864,
+    "timestamp": 1793005590000,
+    "accuracy": 4.25,
+    "speedMps": 1.32,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 27,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.057079,
+    "longitude": 72.85749,
+    "timestamp": 1793005605000,
+    "accuracy": 75.29,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 26,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522253,
+    "longitude": 73.859577,
+    "timestamp": 1793005605000,
+    "accuracy": 7.18,
+    "speedMps": 0.06,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 26,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.516315,
+    "longitude": 73.854411,
+    "timestamp": 1793005605000,
+    "accuracy": 5.63,
+    "speedMps": 1.22,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 26,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.071021,
+    "longitude": 72.877869,
+    "timestamp": 1793005605000,
+    "accuracy": 3.75,
+    "speedMps": 1.58,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 27,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.467579,
+    "longitude": 79.395,
+    "timestamp": 1793005605000,
+    "accuracy": 3.68,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 26,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.896033,
+    "timestamp": 1793005605000,
+    "accuracy": 4.26,
+    "speedMps": 1.18,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 28,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056065,
+    "longitude": 72.857648,
+    "timestamp": 1793005620000,
+    "accuracy": 60.55,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 27,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522262,
+    "longitude": 73.859569,
+    "timestamp": 1793005620000,
+    "accuracy": 4.84,
+    "speedMps": 0.14,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 27,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.516106,
+    "longitude": 73.854393,
+    "timestamp": 1793005620000,
+    "accuracy": 4.8,
+    "speedMps": 1.55,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 27,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.07084,
+    "longitude": 72.877878,
+    "timestamp": 1793005620000,
+    "accuracy": 3.96,
+    "speedMps": 1.34,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 28,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.46596,
+    "longitude": 79.395,
+    "timestamp": 1793005620000,
+    "accuracy": 4.83,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 27,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.896242,
+    "timestamp": 1793005620000,
+    "accuracy": 4.75,
+    "speedMps": 1.46,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 29,
+    "touristId": "tourist_boundary_noise_001",
+    "latitude": 19.056363,
+    "longitude": 72.857523,
+    "timestamp": 1793005635000,
+    "accuracy": 40.07,
+    "speedMps": 1.4,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 28,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522252,
+    "longitude": 73.859585,
+    "timestamp": 1793005635000,
+    "accuracy": 7.12,
+    "speedMps": 0.05,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 28,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.515948,
+    "longitude": 73.854351,
+    "timestamp": 1793005635000,
+    "accuracy": 3.41,
+    "speedMps": 1.21,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 28,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.070665,
+    "longitude": 72.877864,
+    "timestamp": 1793005635000,
+    "accuracy": 7.43,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 29,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.464342,
+    "longitude": 79.395,
+    "timestamp": 1793005635000,
+    "accuracy": 4.24,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 28,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.896438,
+    "timestamp": 1793005635000,
+    "accuracy": 5.57,
+    "speedMps": 1.38,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 29,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.52223,
+    "longitude": 73.859593,
+    "timestamp": 1793005650000,
+    "accuracy": 6.48,
+    "speedMps": 0.15,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 29,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.515801,
+    "longitude": 73.854312,
+    "timestamp": 1793005650000,
+    "accuracy": 3.49,
+    "speedMps": 1.12,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 29,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.0705,
+    "longitude": 72.877842,
+    "timestamp": 1793005650000,
+    "accuracy": 6.53,
+    "speedMps": 1.23,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 30,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.462723,
+    "longitude": 79.395,
+    "timestamp": 1793005650000,
+    "accuracy": 4.64,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 29,
+    "touristId": "tourist_speed_001",
+    "latitude": 19.076,
+    "longitude": 72.896639,
+    "timestamp": 1793005650000,
+    "accuracy": 4.14,
+    "speedMps": 1.41,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 30,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522251,
+    "longitude": 73.85958,
+    "timestamp": 1793005665000,
+    "accuracy": 7.46,
+    "speedMps": 0.03,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 30,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.515618,
+    "longitude": 73.854256,
+    "timestamp": 1793005665000,
+    "accuracy": 3.29,
+    "speedMps": 1.41,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 30,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.070324,
+    "longitude": 72.877876,
+    "timestamp": 1793005665000,
+    "accuracy": 7.48,
+    "speedMps": 1.33,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 31,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.461104,
+    "longitude": 79.395,
+    "timestamp": 1793005665000,
+    "accuracy": 6.16,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 31,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522255,
+    "longitude": 73.85956,
+    "timestamp": 1793005680000,
+    "accuracy": 7.53,
+    "speedMps": 0.16,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 31,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.515446,
+    "longitude": 73.85423,
+    "timestamp": 1793005680000,
+    "accuracy": 7.48,
+    "speedMps": 1.29,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 31,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.070138,
+    "longitude": 72.87788,
+    "timestamp": 1793005680000,
+    "accuracy": 6.23,
+    "speedMps": 1.38,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 32,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.459485,
+    "longitude": 79.395,
+    "timestamp": 1793005680000,
+    "accuracy": 4.83,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 32,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522247,
+    "longitude": 73.85958,
+    "timestamp": 1793005695000,
+    "accuracy": 5.33,
+    "speedMps": 0.01,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 32,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.515277,
+    "longitude": 73.854151,
+    "timestamp": 1793005695000,
+    "accuracy": 3.05,
+    "speedMps": 1.36,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 32,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.06998,
+    "longitude": 72.877901,
+    "timestamp": 1793005695000,
+    "accuracy": 5.61,
+    "speedMps": 1.18,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 33,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.457867,
+    "longitude": 79.395,
+    "timestamp": 1793005695000,
+    "accuracy": 6.13,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 33,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522254,
+    "longitude": 73.859561,
+    "timestamp": 1793005710000,
+    "accuracy": 7.46,
+    "speedMps": 0.16,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 33,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.515093,
+    "longitude": 73.854077,
+    "timestamp": 1793005710000,
+    "accuracy": 6.07,
+    "speedMps": 1.46,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 33,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.0698,
+    "longitude": 72.877858,
+    "timestamp": 1793005710000,
+    "accuracy": 6.37,
+    "speedMps": 1.37,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 34,
+    "touristId": "tourist_restricted_001",
+    "latitude": 20.456248,
+    "longitude": 79.395,
+    "timestamp": 1793005710000,
+    "accuracy": 6.41,
+    "speedMps": 12.0,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 34,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522245,
+    "longitude": 73.859601,
+    "timestamp": 1793005725000,
+    "accuracy": 7.15,
+    "speedMps": 0.14,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 34,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.514919,
+    "longitude": 73.854012,
+    "timestamp": 1793005725000,
+    "accuracy": 3.5,
+    "speedMps": 1.37,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 34,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.069648,
+    "longitude": 72.877844,
+    "timestamp": 1793005725000,
+    "accuracy": 6.84,
+    "speedMps": 1.13,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 35,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522249,
+    "longitude": 73.859579,
+    "timestamp": 1793005740000,
+    "accuracy": 7.43,
+    "speedMps": 0.02,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 35,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.514767,
+    "longitude": 73.853915,
+    "timestamp": 1793005740000,
+    "accuracy": 5.04,
+    "speedMps": 1.32,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 35,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.069489,
+    "longitude": 72.877844,
+    "timestamp": 1793005740000,
+    "accuracy": 7.32,
+    "speedMps": 1.18,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 36,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522249,
+    "longitude": 73.859576,
+    "timestamp": 1793005755000,
+    "accuracy": 5.84,
+    "speedMps": 0.04,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 36,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.514594,
+    "longitude": 73.853784,
+    "timestamp": 1793005755000,
+    "accuracy": 5.25,
+    "speedMps": 1.58,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 36,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.069336,
+    "longitude": 72.877833,
+    "timestamp": 1793005755000,
+    "accuracy": 6.04,
+    "speedMps": 1.14,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 37,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522249,
+    "longitude": 73.859574,
+    "timestamp": 1793005770000,
+    "accuracy": 4.91,
+    "speedMps": 0.06,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 37,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.514457,
+    "longitude": 73.853697,
+    "timestamp": 1793005770000,
+    "accuracy": 7.11,
+    "speedMps": 1.19,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 37,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.069177,
+    "longitude": 72.87779,
+    "timestamp": 1793005770000,
+    "accuracy": 3.54,
+    "speedMps": 1.22,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 38,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522247,
+    "longitude": 73.859583,
+    "timestamp": 1793005785000,
+    "accuracy": 5.31,
+    "speedMps": 0.01,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 38,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.514273,
+    "longitude": 73.853595,
+    "timestamp": 1793005785000,
+    "accuracy": 5.74,
+    "speedMps": 1.54,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 38,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.068975,
+    "longitude": 72.877736,
+    "timestamp": 1793005785000,
+    "accuracy": 5.79,
+    "speedMps": 1.55,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 39,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522266,
+    "longitude": 73.859577,
+    "timestamp": 1793005800000,
+    "accuracy": 5.12,
+    "speedMps": 0.14,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 39,
+    "touristId": "tourist_normal_001",
+    "latitude": 18.514149,
+    "longitude": 73.853491,
+    "timestamp": 1793005800000,
+    "accuracy": 6.43,
+    "speedMps": 1.18,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 39,
+    "touristId": "tourist_normal_002",
+    "latitude": 19.068815,
+    "longitude": 72.877656,
+    "timestamp": 1793005800000,
+    "accuracy": 5.63,
+    "speedMps": 1.31,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 40,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522235,
+    "longitude": 73.859591,
+    "timestamp": 1793005815000,
+    "accuracy": 7.92,
+    "speedMps": 0.11,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 12,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.525484,
+    "longitude": 73.862062,
+    "timestamp": 1793005815000,
+    "accuracy": 4.41,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 41,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522258,
+    "longitude": 73.859577,
+    "timestamp": 1793005830000,
+    "accuracy": 4.46,
+    "speedMps": 0.09,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 13,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.525608,
+    "longitude": 73.862193,
+    "timestamp": 1793005830000,
+    "accuracy": 3.54,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 42,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522256,
+    "longitude": 73.859602,
+    "timestamp": 1793005845000,
+    "accuracy": 7.85,
+    "speedMps": 0.16,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 14,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.525732,
+    "longitude": 73.862324,
+    "timestamp": 1793005845000,
+    "accuracy": 3.5,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 43,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522252,
+    "longitude": 73.859586,
+    "timestamp": 1793005860000,
+    "accuracy": 5.74,
+    "speedMps": 0.05,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 15,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.525856,
+    "longitude": 73.862454,
+    "timestamp": 1793005860000,
+    "accuracy": 3.24,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 44,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.52224,
+    "longitude": 73.859598,
+    "timestamp": 1793005875000,
+    "accuracy": 6.42,
+    "speedMps": 0.12,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 16,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.52598,
+    "longitude": 73.862585,
+    "timestamp": 1793005875000,
+    "accuracy": 3.39,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 45,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522238,
+    "longitude": 73.85959,
+    "timestamp": 1793005890000,
+    "accuracy": 6.31,
+    "speedMps": 0.09,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 17,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.526104,
+    "longitude": 73.862716,
+    "timestamp": 1793005890000,
+    "accuracy": 3.24,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 46,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522245,
+    "longitude": 73.859575,
+    "timestamp": 1793005905000,
+    "accuracy": 4.01,
+    "speedMps": 0.05,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 18,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.526228,
+    "longitude": 73.862847,
+    "timestamp": 1793005905000,
+    "accuracy": 4.07,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 47,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522227,
+    "longitude": 73.859576,
+    "timestamp": 1793005920000,
+    "accuracy": 6.88,
+    "speedMps": 0.15,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 19,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.526352,
+    "longitude": 73.862977,
+    "timestamp": 1793005920000,
+    "accuracy": 4.52,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 48,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522239,
+    "longitude": 73.859566,
+    "timestamp": 1793005935000,
+    "accuracy": 5.46,
+    "speedMps": 0.13,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 20,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.526476,
+    "longitude": 73.863108,
+    "timestamp": 1793005935000,
+    "accuracy": 3.37,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 49,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522246,
+    "longitude": 73.859579,
+    "timestamp": 1793005950000,
+    "accuracy": 5.32,
+    "speedMps": 0.02,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 21,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.5266,
+    "longitude": 73.863239,
+    "timestamp": 1793005950000,
+    "accuracy": 3.43,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 50,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522251,
+    "longitude": 73.859575,
+    "timestamp": 1793005965000,
+    "accuracy": 6.88,
+    "speedMps": 0.06,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 22,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.526724,
+    "longitude": 73.86337,
+    "timestamp": 1793005965000,
+    "accuracy": 3.97,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 51,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522244,
+    "longitude": 73.859589,
+    "timestamp": 1793005980000,
+    "accuracy": 5.63,
+    "speedMps": 0.05,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 23,
+    "touristId": "tourist_missing_gps_001",
+    "latitude": 18.526848,
+    "longitude": 73.863501,
+    "timestamp": 1793005980000,
+    "accuracy": 4.45,
+    "speedMps": 1.3,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 52,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522244,
+    "longitude": 73.859591,
+    "timestamp": 1793005995000,
+    "accuracy": 4.51,
+    "speedMps": 0.07,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 53,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522256,
+    "longitude": 73.859578,
+    "timestamp": 1793006010000,
+    "accuracy": 6.71,
+    "speedMps": 0.07,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 54,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522232,
+    "longitude": 73.859567,
+    "timestamp": 1793006025000,
+    "accuracy": 5.2,
+    "speedMps": 0.15,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 55,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.52226,
+    "longitude": 73.859582,
+    "timestamp": 1793006040000,
+    "accuracy": 5.15,
+    "speedMps": 0.09,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 56,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522238,
+    "longitude": 73.859576,
+    "timestamp": 1793006055000,
+    "accuracy": 6.62,
+    "speedMps": 0.08,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 57,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522237,
+    "longitude": 73.859586,
+    "timestamp": 1793006070000,
+    "accuracy": 4.85,
+    "speedMps": 0.08,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 58,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522256,
+    "longitude": 73.859575,
+    "timestamp": 1793006085000,
+    "accuracy": 7.18,
+    "speedMps": 0.08,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 59,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522251,
+    "longitude": 73.859584,
+    "timestamp": 1793006100000,
+    "accuracy": 6.06,
+    "speedMps": 0.03,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 60,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522239,
+    "longitude": 73.859595,
+    "timestamp": 1793006115000,
+    "accuracy": 7.27,
+    "speedMps": 0.11,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 61,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522239,
+    "longitude": 73.859566,
+    "timestamp": 1793006130000,
+    "accuracy": 4.9,
+    "speedMps": 0.13,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 62,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522252,
+    "longitude": 73.859582,
+    "timestamp": 1793006145000,
+    "accuracy": 4.98,
+    "speedMps": 0.04,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 63,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.522253,
+    "longitude": 73.859572,
+    "timestamp": 1793006160000,
+    "accuracy": 4.29,
+    "speedMps": 0.08,
+    "isOfflineBuffered": false
+  },
+  {
+    "pointIndex": 64,
+    "touristId": "tourist_inactivity_001",
+    "latitude": 18.52224,
+    "longitude": 73.859574,
+    "timestamp": 1793006175000,
+    "accuracy": 4.78,
+    "speedMps": 0.07,
+    "isOfflineBuffered": false
+  }
+]
